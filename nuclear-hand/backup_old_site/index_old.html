@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+  <title>Nuclear Hand – Gafas Inteligentes y Wearables con IA en España</title>
+  <meta name="description" content="Nuclear Hand diseña gafas inteligentes y relojes inteligentes con inteligencia artificial. Innovación, diseño y privacidad desde España. Descubre Nuclear Vision X y NuclearBand X.">
+  <meta name="keywords" content="Nuclear Hand, gafas inteligentes, reloj inteligente, IA, inteligencia artificial, wearables, España, tecnología innovadora">
+  <link rel="canonical" href="https://www.nuclearhand.com/">
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- PERF: conexiones y fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+
+  <!-- schema.org Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Nuclear Hand",
+    "url": "https://www.nuclearhand.com",
+    "logo": "https://www.nuclearhand.com/logo.png",
+    "description": "Nuclear Hand: gafas inteligentes y relojes inteligentes con inteligencia artificial, diseño innovador y privacidad.",
+    "sameAs": [
+      "https://www.instagram.com/nuclearhand",
+      "https://www.youtube.com/nuclearhand",
+      "https://www.linkedin.com/company/nuclearhand"
+    ]
+  }
+  </script>
+  <!-- schema.org Product (Nuclear Vision X) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Nuclear Vision X",
+    "image": "https://www.nuclearhand.com/images/nuclear-vision-x.jpg",
+    "description": "Gafas inteligentes con IA, traducción en tiempo real y asistente manos libres.",
+    "brand": { "@type": "Brand", "name": "Nuclear Hand" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": "299.00",
+      "availability": "https://schema.org/PreOrder"
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b1220;--card:#111a2e;--muted:#97a2b7;--ink:#e6ecff;--brand:#11a0ff;--accent:#f2ff00;--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.35)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;line-height:1.55}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1200px;margin:auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(11,18,32,.85),rgba(11,18,32,.55) 70%,rgba(11,18,32,0));z-index:30;border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .brand span{font-size:1.15rem}
+    .pill{padding:10px 16px;border-radius:999px;background:linear-gradient(90deg,var(--brand),#6cc6ff);color:#081324;font-weight:700;border:none;cursor:pointer}
+    .pill.inverse{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.12)}
+    .grid{display:grid;gap:24px}
+    .hero{padding:60px 0 30px;display:grid;gap:28px}
+    .headline{font-size:clamp(32px,5vw,56px);line-height:1.05;margin:0}
+    .sub{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:64ch}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .products{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .product img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.08)}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(17,160,255,.12);border:1px solid rgba(17,160,255,.35);color:#bfe6ff;padding:6px 12px;border-radius:999px;font-size:.85rem}
+    .section-title{font-size:1.6rem;margin:10px 0 6px}
+    .features{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .feature h3{margin:.2rem 0 .3rem;font-size:1.05rem}
+    .feature p{color:var(--muted);margin:0}
+    .about{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+    @media (max-width:900px){.about{grid-template-columns:1fr}}
+    .logo{width:44px;height:44px}
+    .hand-logo{width:60px;height:60px}
+    .mono{font-variant-ligatures:none;letter-spacing:.2px}
+    footer{border-top:1px solid rgba(255,255,255,.06);margin-top:40px}
+    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:20px}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    .input, textarea{width:100%;background:#0d1527;border:1px solid rgba(255,255,255,.1);border-radius:12px;color:var(--ink);padding:12px 14px}
+    .input:focus, textarea:focus{outline:2px solid var(--brand);border-color:transparent}
+    .kpi{display:flex;gap:14px;align-items:center}
+    .kpi b{font-size:1.3rem}
+    .tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1);color:var(--muted);font-size:.82rem}
+    .note{font-size:.9rem;color:#b7c2d9}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    @media (max-width:720px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Nuclear Hand logo">
+        <!-- Logo SVG -->
+        <svg class="hand-logo" viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#11a0ff"/>
+              <stop offset="1" stop-color="#6cc6ff"/>
+            </linearGradient>
+          </defs>
+          <path d="M30 50c2-12 12-30 24-30 7 0 7 10 7 18 0 3 5 3 5 0 0-8 0-20 8-20s8 12 8 22c0 3 5 3 5 0 0-9 1-18 8-18 9 0 10 16 7 28-4 16-7 26-10 36-3 10-9 18-22 20-18 3-36-9-40-26-2-8-3-20 0-30z" fill="none" stroke="url(#g1)" stroke-width="4" stroke-linecap="round"/>
+          <g transform="translate(60,70)">
+            <circle r="14" fill="#0b1220" stroke="#f2ff00" stroke-width="3"/>
+            <path d="M0-8 L5-1 A6 6 0 0 1 0 6 L-5-1 Z" fill="#f2ff00"/>
+            <path d="M7 3 L-1 7 A6 6 0 0 1 -6 -1 L1 -5 Z" fill="#f2ff00"/>
+            <path d="M-7 3 L1 7 A6 6 0 0 1 6 -1 L-1 -5 Z" fill="#f2ff00"/>
+            <circle r="2.6" fill="#f2ff00"/>
+          </g>
+        </svg>
+        <span>Nuclear <span style="color:var(--accent)">Hand</span></span>
+      </div>
+      <nav>
+        <a class="tag" href="#productos">Productos</a>
+        <a class="tag" href="#caracteristicas">Características</a>
+        <a class="tag" href="#sobre">Sobre nosotros</a>
+        <a class="tag" href="#contacto">Contacto</a>
+      </nav>
+      <button class="pill" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Pide info</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="badge" role="note">Innovación + IA + Diseño</div>
+      <h1 class="headline">Gafas inteligentes y wearables con IA – <span style="color:var(--accent)">Nuclear Hand</span></h1>
+      <p class="sub">Creamos dispositivos con <b>inteligencia artificial</b> que se integran a tu día a día. Deja que la tecnología trabaje por ti: precisión, velocidad y una experiencia que parece del futuro.</p>
+      <div class="cta">
+        <button class="pill" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver productos</button>
+        <button class="pill inverse" onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">Conocer la marca</button>
+      </div>
+      <div class="gallery" aria-label="Galería de novedades">
+        <div class="card" style="aspect-ratio:16/9;display:flex;align-items:end;justify-content:space-between;padding:18px;background:linear-gradient(160deg,#0f1a33,rgba(17,160,255,.08))">
+          <div>
+            <div class="tag">Nuevo</div>
+            <h3 style="margin:.4rem 0 0">Nuclear Vision X</h3>
+            <p class="note">Gafas inteligentes con IA</p>
+          </div>
+          <span class="tag" aria-label="precio estimado">€€</span>
+        </div>
+        <div class="card" style="aspect-ratio:1/1;display:grid;place-items:center"><div class="kpi"><b>+30%</b><span class="note">Productividad</span></div></div>
+        <div class="card" style="aspect-ratio:1/1;display:grid;place-items:center"><div class="kpi"><b>-40%</b><span class="note">Tiempo de tareas</span></div></div>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos" aria-labelledby="titulo-productos" style="margin-top:18px">
+      <h2 id="titulo-productos" class="section-title">Productos destacados</h2>
+      <p class="note" style="margin-top:-4px">Prototipos en validación. Suscríbete para novedades y preventa.</p>
+      <div class="grid products">
+        <article class="card product">
+          <img 
+            src="https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?q=80&w=1200&auto=format&fit=crop" 
+            srcset="https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?q=80&w=600 600w, https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?q=80&w=900 900w, https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?q=80&w=1200 1200w" 
+            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+            alt="Gafas inteligentes de estilo futurista"
+            width="1200" height="800"
+            loading="eager" fetchpriority="high" decoding="async" />
+          <h3 style="margin:.6rem 0 .2rem">Nuclear Vision X — Gafas Inteligentes</h3>
+          <p class="note">Traducción en tiempo real, HUD minimalista y asistente IA manos libres.</p>
+          <div class="cta"><button class="pill">Quiero saber más</button><button class="pill inverse">Unirme a la lista</button></div>
+        </article>
+        <article class="card product">
+          <img 
+            src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=1200&auto=format&fit=crop" 
+            srcset="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=600 600w, https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=900 900w, https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=1200 1200w" 
+            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+            alt="Reloj inteligente con pantalla brillante"
+            width="1200" height="800"
+            loading="lazy" fetchpriority="low" decoding="async" />
+          <h3 style="margin:.6rem 0 .2rem">NuclearBand X — Reloj Inteligente</h3>
+          <p class="note">Salud, notificaciones, coaching y automatizaciones con IA.</p>
+          <div class="cta"><button class="pill">Quiero saber más</button><button class="pill inverse">Unirme a la lista</button></div>
+        </article>
+        <article class="card product">
+          <img 
+            src="https://images.unsplash.com/photo-1537498425277-c283d32ef9db?q=80&w=1200&auto=format&fit=crop" 
+            srcset="https://images.unsplash.com/photo-1537498425277-c283d32ef9db?q=80&w=600 600w, https://images.unsplash.com/photo-1537498425277-c283d32ef9db?q=80&w=900 900w, https://images.unsplash.com/photo-1537498425277-c283d32ef9db?q=80&w=1200 1200w" 
+            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+            alt="Circuito electrónico con iluminación azul"
+            width="1200" height="800"
+            loading="lazy" fetchpriority="low" decoding="async" />
+          <h3 style="margin:.6rem 0 .2rem">Accesorios & Repuestos</h3>
+          <p class="note">Packs de lentes, correas, cargadores y módulos.</p>
+          <div class="cta"><button class="pill">Catálogo</button><button class="pill inverse">Notificarme</button></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CARACTERÍSTICAS -->
+    <section id="caracteristicas" aria-labelledby="titulo-caract" style="margin-top:18px">
+      <h2 id="titulo-caract" class="section-title">¿Por qué Nuclear Hand?</h2>
+      <div class="grid features">
+        <div class="card feature">
+          <h3>IA útil, no ruido</h3>
+          <p>Automatizamos tareas cotidianas y decisiones simples para que te concentres en lo importante.</p>
+        </div>
+        <div class="card feature">
+          <h3>Diseño y ergonomía</h3>
+          <p>Ligero, resistente y cómodo. Tecnología que no estorba.</p>
+        </div>
+        <div class="card feature">
+          <h3>Privacidad primero</h3>
+          <p>Procesamiento en el dispositivo cuando es posible y cifrado extremo a extremo.</p>
+        </div>
+        <div class="card feature">
+          <h3>Ecosistema abierto</h3>
+          <p>Integraciones con apps y APIs para ampliar funciones sin ataduras.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="sobre" aria-labelledby="titulo-sobre" style="margin-top:18px">
+      <h2 id="titulo-sobre" class="section-title">Sobre la marca</h2>
+      <div class="about">
+        <div class="card">
+          <p>Somos una marca de innovación con base en España. Nuestra misión es crear productos con <b>inteligencia</b> que se sientan naturales: útiles, discretos y hermosos. Empezamos con <i>Nuclear Vision X</i> y <i>NuclearBand X</i>, y construiremos un ecosistema alrededor de ti.</p>
+          <ul>
+            <li>Atención al usuario cercana y soporte humano.</li>
+            <li>Actualizaciones OTA con nuevas funciones periódicas.</li>
+            <li>Compromiso con accesibilidad y sostenibilidad.</li>
+          </ul>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+            <span class="tag">#IA</span>
+            <span class="tag">#Wearables</span>
+            <span class="tag">#Privacidad</span>
+            <span class="tag">#Diseño</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Mini hoja de ruta</h3>
+          <ol>
+            <li>Validación de prototipos (Q3).</li>
+            <li>Pilotos con early adopters (Q4).</li>
+            <li>Preventa limitada (Q1).</li>
+          </ol>
+          <p class="note">¿Quieres participar? Únete a la lista y cuéntanos tu caso de uso.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" aria-labelledby="titulo-contacto" style="margin-top:18px">
+      <h2 id="titulo-contacto" class="section-title">Contacto</h2>
+      <div class="grid" style="grid-template-columns:1.1fr .9fr">
+        <form id="nh-contact" class="card" novalidate>
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="company" id="company" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" aria-hidden="true">
+
+          <label class="sr-only" for="nombre">Nombre</label>
+          <input class="input" id="nombre" name="name" placeholder="Tu nombre" required minlength="2">
+          <div style="height:8px"></div>
+
+          <label class="sr-only" for="email">Email</label>
+          <input class="input" id="email" name="email" type="email" placeholder="tu@email.com" required>
+          <div style="height:8px"></div>
+
+          <label class="sr-only" for="msg">Mensaje</label>
+          <textarea class="input" id="msg" name="message" rows="4" placeholder="Cuéntanos qué necesitas…" required minlength="5"></textarea>
+          <div style="height:8px"></div>
+
+          <label style="display:flex;gap:8px;align-items:flex-start;font-size:.9rem;color:#cbd5e1">
+            <input type="checkbox" id="consent" required>
+            <span>Acepto el tratamiento de mis datos para responder a mi consulta. <a href="#" target="_blank" rel="noopener">Política de privacidad</a></span>
+          </label>
+
+          <div style="height:12px"></div>
+          <div id="form-status" class="note" aria-live="polite"></div>
+          <div style="height:8px"></div>
+
+          <button class="pill" type="submit">Enviar</button>
+        </form>
+        <div class="card">
+          <h3 style="margin-top:0">Datos y redes</h3>
+          <p class="mono">contacto@nuclearhand.com</p>
+          <p class="mono">Madrid, España</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+            <a class="tag" href="#">Instagram</a>
+            <a class="tag" href="#">YouTube</a>
+            <a class="tag" href="#">LinkedIn</a>
+            <a class="tag" href="#">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:6px">
+          <svg class="hand-logo" viewBox="0 0 120 120" aria-hidden="true">
+            <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#11a0ff"/><stop offset="1" stop-color="#6cc6ff"/></linearGradient></defs>
+            <path d="M30 50c2-12 12-30 24-30 7 0 7 10 7 18 0 3 5 3 5 0 0-8 0-20 8-20s8 12 8 22c0 3 5 3 5 0 0-9 1-18 8-18 9 0 10 16 7 28-4 16-7 26-10 36-3 10-9 18-22 20-18 3-36-9-40-26-2-8-3-20 0-30z" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
+            <g transform="translate(60,70)"><circle r="14" fill="#0b1220" stroke="#f2ff00" stroke-width="3"/><path d="M0-8 L5-1 A6 6 0 0 1 0 6 L-5-1 Z" fill="#f2ff00"/><path d="M7 3 L-1 7 A6 6 0 0 1 -6 -1 L1 -5 Z" fill="#f2ff00"/><path d="M-7 3 L1 7 A6 6 0 0 1 6 -1 L-1 -5 Z" fill="#f2ff00"/><circle r="2.6" fill="#f2ff00"/></g>
+          </svg>
+          <span>Nuclear <span style="color:var(--accent)">Hand</span></span>
+        </div>
+        <p class="note">© <span id="y"></span> Nuclear Hand. Todos los derechos reservados.</p>
+      </div>
+      <div>
+        <h4 style="margin:0 0 8px">Recursos</h4>
+        <ul style="list-style:none;padding:0;margin:0;color:var(--muted)">
+          <li><a href="#productos">Catálogo</a></li>
+          <li><a href="#caracteristicas">Características</a></li>
+          <li><a href="#sobre">Sobre nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin:0 0 8px">Legal</h4>
+        <ul style="list-style:none;padding:0;margin:0;color:var(--muted)">
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Términos</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script defer>
+    // Año dinámico en el footer
+    (function(){var y=document.getElementById('y'); if(y) y.textContent = new Date().getFullYear();})();
+
+    // --- Contact form -> Webhook (Zapier o n8n) ---
+    (function(){
+      const form = document.getElementById('nh-contact');
+      const status = document.getElementById('form-status');
+      const WEBHOOK_URL = 'REEMPLAZA_CON_TU_WEBHOOK'; // p.ej. Zapier Catch Hook o n8n Webhook
+
+      function show(msg, ok=true){
+        if (!status) return;
+        status.textContent = msg;
+        status.style.color = ok ? '#a7f3d0' : '#fecaca';
+      }
+
+      if (!form) return;
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        if(!form.checkValidity()){
+          show('Revisa los campos: nombre (2+), email válido y mensaje (5+).', false);
+          form.reportValidity();
+          return;
+        }
+
+        // Honeypot
+        var hp = document.getElementById('company');
+        if(hp && hp.value){ show('Enviado.', true); return; }
+
+        const payload = {
+          name: document.getElementById('nombre')?.value.trim() || '',
+          email: document.getElementById('email')?.value.trim() || '',
+          message: document.getElementById('msg')?.value.trim() || '',
+          consent: document.getElementById('consent')?.checked || false,
+          page: location.href,
+          ts: new Date().toISOString()
+        };
+
+        try{
+          show('Enviando…');
+          const res = await fetch(WEBHOOK_URL,{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify(payload)
+          });
+          if(!res.ok) throw new Error('HTTP '+res.status);
+          show('¡Gracias! Hemos recibido tu mensaje. Te contactaremos pronto.', true);
+          form.reset();
+        }catch(err){
+          console.error(err);
+          show('No se pudo enviar ahora. Inténtalo más tarde o escríbenos a contacto@nuclearhand.com', false);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
