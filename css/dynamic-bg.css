@@ -1,0 +1,79 @@
+/* === BACKGROUND LAYERS: grid + nuclear rays + particles === */
+.bg-grid,
+.bg-rays,
+.bg-particles {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none
+}
+
+.bg-grid {
+    background:
+        radial-gradient(60vmax 60vmax at 12% 20%, rgba(17, 160, 255, .18), transparent 60%),
+        radial-gradient(50vmax 50vmax at 88% 15%, rgba(242, 255, 0, .10), transparent 60%),
+        radial-gradient(40vmax 40vmax at 35% 90%, rgba(17, 160, 255, .10), transparent 60%),
+        repeating-linear-gradient(90deg, transparent 0 28px, rgba(255, 255, 255, .06) 28px 29px),
+        repeating-linear-gradient(0deg, transparent 0 28px, rgba(255, 255, 255, .06) 28px 29px),
+        linear-gradient(180deg, #071020, #0b1220 45%, #0b1220 65%, #081121);
+    animation: gridMove 22s linear infinite;
+}
+
+@keyframes gridMove {
+    to {
+        background-position: 0 0, 0 0, 0 0, 220px 0, 0 220px, 0 0
+    }
+}
+
+.bg-rays {
+    z-index: -2;
+    mix-blend-mode: screen;
+    background: repeating-conic-gradient(from 0deg, rgba(255, 255, 0, .09) 0deg 6deg, transparent 6deg 12deg);
+    transform-origin: center;
+    animation: rays 24s linear infinite;
+    -webkit-mask: radial-gradient(closest-side, transparent 0 58%, #000 70%);
+    mask: radial-gradient(closest-side, transparent 0 58%, #000 70%);
+}
+
+@keyframes rays {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.bg-particles {
+    z-index: -1
+}
+
+.bg-particles::before,
+.bg-particles::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, .25), transparent 60%),
+        radial-gradient(2px 2px at 50% 70%, rgba(255, 255, 255, .18), transparent 60%),
+        radial-gradient(2px 2px at 80% 20%, rgba(255, 255, 255, .22), transparent 60%);
+    filter: blur(.2px);
+    animation: twinkle 6s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: .35
+    }
+
+    to {
+        opacity: .9
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .bg-grid,
+    .bg-rays,
+    .bg-particles::before,
+    .bg-particles::after {
+        animation: none
+    }
+}

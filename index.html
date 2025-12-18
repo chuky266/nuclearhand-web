@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dynamic-bg.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700&display=swap"
+    rel="stylesheet">
+  <title>Nuclear Hand - Dynamic</title>
+</head>
+
+<body>
+  <!-- Dynamic Background Layers -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-rays" aria-hidden="true"></div>
+  <div class="bg-particles" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-wrap" aria-label="Volver al inicio">
+        <img src="images/logo.png" alt="Logo Nuclear Hand" class="logo">
+        <span class="brand">NUCLEAR HAND</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#valor">Manifiesto</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-box">
+        <h1>EL FUTURO NO SE ESPERA, SE PROGRAMA.</h1>
+        <p>Inteligencia que amplifica tus capacidades, no que las sustituye. Tecnología invisible para la vida real.</p>
+        <a class="btn" href="#productos">Explorar el Futuro</a>
+        <a class="btn secondary" href="#valor">Manifiesto</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE BLOCK -->
+  <section id="valor" class="section value-block">
+    <div class="container">
+      <h2>High Tech. High Life.</h2>
+      <p style="max-width: 65ch; margin: 0 auto 30px; color: var(--muted); line-height: 1.6;">No vendemos gadgets;
+        diseñamos extensiones
+        de tu cuerpo. Dispositivos que respetan tu atención, protegen tu privacidad y te dan superpoderes en un mundo
+        lleno de ruido.</p>
+      <div class="value-items">
+        <div class="value-item">
+          <strong>⚡ IA Local</strong>
+          <span>Privacidad radical. Tus datos no salen del dispositivo.</span>
+        </div>
+        <div class="value-item">
+          <strong>👁️ Zero Distraction</strong>
+          <span>Tecnología calmada que solo avisa cuando importa.</span>
+        </div>
+        <div class="value-item">
+          <strong>🔋 Energía Nuclear</strong>
+          <span>Autonomía para semanas, no para horas.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS -->
+  <section id="productos" class="section">
+    <div class="container">
+      <h2>Productos destacados</h2>
+      <div class="grid">
+        <article class="card">
+          <span
+            style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:8px;">Flagship</span>
+          <h3>Nuclear Vision X</h3>
+          <p style="font-weight:600; color:var(--text); margin-bottom:8px;">Tu realidad, amplificada.</p>
+          <p>Navegación, mensajes y datos vitales flotando frente a tus ojos. Diseño italiano ultraligero con un núcleo
+            de IA invisible.</p>
+          <a href="#" style="display:inline-block; margin-top:12px; color:var(--primary); font-size:0.9em;">Ver Specs
+            →</a>
+        </article>
+        <article class="card">
+          <span
+            style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:8px;">Best
+            Seller</span>
+          <h3>NuclearBand X</h3>
+          <p style="font-weight:600; color:var(--text); margin-bottom:8px;">El tiempo es tuyo.</p>
+          <p>Reloj de tinta electrónica (E-Ink) con IA proactiva. Filtra el ruido digital para que recuperes tu foco
+            absoluto. 14 días de batería.</p>
+          <a href="#" style="display:inline-block; margin-top:12px; color:var(--primary); font-size:0.9em;">Ver Specs
+            →</a>
+        </article>
+        <article class="card">
+          <span
+            style="color:var(--muted); font-size: 0.8em; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:8px;">Próximamente</span>
+          <h3>LuxeVibe</h3>
+          <p style="font-weight:600; color:var(--text); margin-bottom:8px;">Inteligencia biológica visible.</p>
+          <p>Un laboratorio de salud clínica en tu dedo. Sin pantallas, solo datos puros de recuperación y vitalidad.
+          </p>
+          <a href="#" style="display:inline-block; margin-top:12px; color:var(--muted); font-size:0.9em;">Unirse a la
+            Lista →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSISTEMA (Rename title if needed, keeping Tu Segunda Mente for now as secondary value prop) -->
+  <section id="ecosistema" class="section">
+    <div class="container" style="text-align:center; max-width:800px;">
+      <h2>Tu Segunda Mente</h2>
+      <p style="font-size:1.1em; line-height:1.6;">Basta de "smart devices" que te roban la atención. Nuclear Hand teje
+        una <strong>red neuronal privada</strong> entre tus dispositivos. Tus datos biológicos y tu agenda se
+        sincronizan en local, sin salir de tu cuerpo. Es tecnología que amplifica tu intuición y protege tu soberanía.
+        Silencio digital. Máxima potencia.</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO (New Section Merged) -->
+  <section id="contacto" class="section">
+    <div class="container" style="text-align:center;">
+      <h2 style="margin-bottom: 24px;">Contacto</h2>
+      <div class="value-items"> <!-- Reusing value-items for premium card look -->
+        <div class="value-item">
+          <strong>✉️ Email</strong>
+          <span>info@nuclearhand.com</span>
+        </div>
+        <div class="value-item">
+          <strong>📍 Ubicación</strong>
+          <span>Barcelona, España</span>
+        </div>
+        <div class="value-item">
+          <strong>🌐 Redes</strong>
+          <span><a href="#" style="color:var(--text);">Twitter</a> · <a href="#"
+              style="color:var(--text);">LinkedIn</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div>© 2025 Nuclear Hand. Designed in Barcelona.</div>
+      <div style="margin-top:8px; font-size:0.9em;">
+        <a href="#" style="margin:0 8px;">Privacidad Radical</a> ·
+        <a href="#" style="margin:0 8px;">Términos</a> ·
+        <a href="#" style="margin:0 8px;">Manifiesto</a> ·
+        <a href="#" style="margin:0 8px;">Soporte</a>
+      </div>
+      <div style="margin-top:12px; font-size:0.8em; opacity:0.6;">Control total. Sin fricción.</div>
+    </div>
+  </footer>
+</body>
+
+</html>

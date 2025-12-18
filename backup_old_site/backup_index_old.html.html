@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuclear Hand — Gafas y Wearables con IA</title>
+  <meta name="description" content="Nuclear Hand: gafas y wearables con inteligencia artificial. Diseño, utilidad y privacidad. Únete a nuestra comunidad y descubre Nuclear Vision X y NuclearBand X."/>
+  <meta name="theme-color" content="#0b1220" />
+  <style>
+    :root{
+      --bg:#0b1220; --ink:#e8efff; --muted:#9fb0c9;
+      --brand:#11a0ff; --accent:#f2ff00; --green:#39ff14;
+      --line:rgba(255,255,255,.1); --card:rgba(12,20,40,.7);
+      --radius:18px; --shadow:0 16px 40px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55;overflow-x:hidden;scroll-behavior:smooth}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* === BACKGROUND LAYERS: grid + nuclear rays + particles === */
+    .bg-grid,.bg-rays,.bg-particles{position:fixed;inset:0;z-index:-3;pointer-events:none}
+    .bg-grid{
+      background:
+        radial-gradient(60vmax 60vmax at 12% 20%, rgba(17,160,255,.18), transparent 60%),
+        radial-gradient(50vmax 50vmax at 88% 15%, rgba(242,255,0,.10), transparent 60%),
+        radial-gradient(40vmax 40vmax at 35% 90%, rgba(17,160,255,.10), transparent 60%),
+        repeating-linear-gradient(90deg, transparent 0 28px, rgba(255,255,255,.06) 28px 29px),
+        repeating-linear-gradient(0deg,  transparent 0 28px, rgba(255,255,255,.06) 28px 29px),
+        linear-gradient(180deg, #071020, #0b1220 45%, #0b1220 65%, #081121);
+      animation:gridMove 22s linear infinite;
+    }
+    @keyframes gridMove{to{background-position:0 0,0 0,0 0, 220px 0, 0 220px, 0 0}}
+    .bg-rays{z-index:-2;mix-blend-mode:screen;
+      background: repeating-conic-gradient(from 0deg, rgba(255,255,0,.09) 0deg 6deg, transparent 6deg 12deg);
+      transform-origin:center;animation:rays 24s linear infinite;
+      -webkit-mask:radial-gradient(closest-side, transparent 0 58%, #000 70%);
+              mask:radial-gradient(closest-side, transparent 0 58%, #000 70%);
+    }
+    @keyframes rays{to{transform:rotate(360deg)}}
+    .bg-particles{z-index:-1}
+    .bg-particles::before,.bg-particles::after{content:"";position:absolute;inset:0;
+      background:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.25), transparent 60%),
+        radial-gradient(2px 2px at 50% 70%, rgba(255,255,255,.18), transparent 60%),
+        radial-gradient(2px 2px at 80% 20%, rgba(255,255,255,.22), transparent 60%);
+      filter:blur(.2px);animation:twinkle 6s ease-in-out infinite alternate;
+    }
+    @keyframes twinkle{from{opacity:.35}to{opacity:.9}}
+    @media (prefers-reduced-motion: reduce){
+      .bg-grid,.bg-rays,.bg-particles::before,.bg-particles::after{animation:none}
+    }
+
+    /* === LAYOUT === */
+    .container{max-width:1200px;margin:auto;padding:24px}
+    header{position:sticky;top:0;z-index:30;backdrop-filter:blur(8px);
+      background:linear-gradient(180deg,rgba(11,18,32,.85),rgba(11,18,32,.55) 75%,rgba(11,18,32,0));
+      border-bottom:1px solid var(--line)
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:52px;width:auto}
+    .brand-name{font-weight:900;letter-spacing:.3px;font-size:1.2rem;color:var(--ink);text-shadow:0 0 10px rgba(242,255,0,.35)}
+    nav a{padding:8px 12px;border-radius:999px;border:1px solid transparent}
+    nav a:hover{border-color:var(--line)}
+    .pill{padding:11px 16px;border-radius:999px;background:linear-gradient(90deg,var(--brand),#6cc6ff);color:#041022;font-weight:800;border:none;cursor:pointer}
+    .pill.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+
+    /* HERO */
+    .hero{padding:72px 0 36px;display:grid;gap:16px}
+    .kicker{display:inline-flex;gap:8px;align-items:center;color:#c8d4ea;font-size:.88rem}
+    .kicker .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+    .headline{font-size:clamp(34px,6vw,64px);line-height:1.03;margin:0;
+      color:var(--accent);
+      text-shadow:0 0 16px rgba(242,255,0,.55), 0 0 36px rgba(242,255,0,.25);
+    }
+    .sub{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:65ch;margin:0}
+    .hero-media{margin-top:12px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow)}
+    .hero-media img{width:100%;display:block}
+
+    /* SECTIONS */
+    .section{margin:22px 0}
+    .section-title{font-size:1.6rem;margin:10px 0 6px}
+    .note{font-size:.95rem;color:var(--muted)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+
+    .grid{display:grid;gap:22px}
+    .products{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .product img,.product video{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+    .product h3{margin:.6rem 0 .2rem}
+    .product .cta{display:flex;gap:10px;flex-wrap:wrap}
+
+    .features{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .feature h3{margin:.2rem 0 .3rem;font-size:1.05rem}
+    .feature p{color:var(--muted);margin:0}
+
+    .about{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
+    @media (max-width:900px){.about{grid-template-columns:1fr}}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    @media (max-width:720px){.gallery{grid-template-columns:repeat(2,1fr)}}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+    @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+    .input, textarea{width:100%;background:rgba(8,14,28,.9);border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:12px 14px}
+    .input:focus, textarea:focus{outline:2px solid var(--brand);border-color:transparent}
+
+    footer{border-top:1px solid var(--line);margin-top:40px}
+    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:20px}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+
+    /* Micro-interacciones */
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.in{opacity:1;transform:none}
+    .card:hover{transform:translateY(-2px);transition:transform .25s ease;box-shadow:0 20px 50px rgba(0,0,0,.55)}
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-rays" aria-hidden="true"></div>
+  <div class="bg-particles" aria-hidden="true"></div>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="images/logo-nuclearhand.png" alt="Nuclear Hand logo"/>
+        <span class="brand-name">Nuclear Hand</span>
+      </div>
+      <nav>
+        <a href="#productos">Productos</a>
+        <a href="#caracteristicas">Características</a>
+        <a href="#galeria">Galería</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="pill" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Pedir info</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero reveal">
+      <div class="kicker"><span class="dot"></span> IA • Wearables • Privacidad</div>
+      <h1 class="headline">Nuclear<span style="color:#fff"> Hand</span></h1>
+      <p class="sub">Artículos con <b>inteligencia artificial</b> que amplifican tus capacidades. Diseño y utilidad real, sin ruido.</p>
+      <div class="hero-media card">
+        <!-- Puedes poner tu propio vídeo o una imagen de portada -->
+        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop" alt="Estética tecnológica azul con brillo"/>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <a class="pill" href="#productos">Ver productos</a>
+        <a class="pill alt" href="#sobre">Conocer la marca</a>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos" class="section reveal">
+      <h2 class="section-title">Productos destacados</h2>
+      <p class="note">Prototipos en validación. Suscríbete para novedades y preventa.</p>
+      <div class="grid products">
+        <article class="card product">
+          <img src="https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?q=80&w=1200&auto=format&fit=crop"
+               alt="Gafas inteligentes Nuclear Vision X"/>
+          <h3>Nuclear Vision X — Gafas Inteligentes</h3>
+          <p class="note">Traducción en tiempo real, HUD minimalista y asistente IA manos libres.</p>
+          <div class="cta"><button class="pill">Saber más</button><button class="pill alt">Unirme a la lista</button></div>
+        </article>
+        <article class="card product">
+          <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=1200&auto=format&fit=crop"
+               alt="Reloj inteligente NuclearBand X"/>
+          <h3>NuclearBand X — Reloj Inteligente</h3>
+          <p class="note">Salud, notificaciones, coaching y automatizaciones con IA.</p>
+          <div class="cta"><button class="pill">Saber más</button><button class="pill alt">Unirme a la lista</button></div>
+        </article>
+        <article class="card product">
+          <img src="https://images.unsplash.com/photo-1537498425277-c283d32ef9db?q=80&w=1200&auto=format&fit=crop"
+               alt="Accesorios y repuestos"/>
+          <h3>Accesorios & Repuestos</h3>
+          <p class="note">Packs de lentes, correas, cargadores y módulos.</p>
+          <div class="cta"><button class="pill">Catálogo</button><button class="pill alt">Notificarme</button></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CARACTERÍSTICAS -->
+    <section id="caracteristicas" class="section reveal">
+      <h2 class="section-title">¿Por qué Nuclear Hand?</h2>
+      <div class="grid features">
+        <div class="card feature"><h3>IA útil, no ruido</h3><p>Automatiza tareas y decisiones simples para que te concentres en lo importante.</p></div>
+        <div class="card feature"><h3>Diseño y ergonomía</h3><p>Ligero, resistente y cómodo. Tecnología que no estorba.</p></div>
+        <div class="card feature"><h3>Privacidad primero</h3><p>Procesamiento en el dispositivo cuando es posible y cifrado extremo a extremo.</p></div>
+        <div class="card feature"><h3>Ecosistema abierto</h3><p>Integraciones con apps y APIs para ampliar funciones sin ataduras.</p></div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="section reveal">
+      <h2 class="section-title">Galería</h2>
+      <div class="gallery">
+        <img class="card" src="https://images.unsplash.com/photo-1555617117-08c5b31c5f25?q=80&w=1200&auto=format&fit=crop" alt="Detalle de hardware futurista"/>
+        <img class="card" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Interfaz azul minimalista"/>
+        <img class="card" src="https://images.unsplash.com/photo-1527443224154-c4f2a9d3e4c6?q=80&w=1200&auto=format&fit=crop" alt="Estética tecnológica oscura"/>
+      </div>
+      <p class="note">Para usar tus propios medios: guarda los archivos en <code>/images</code> o <code>/videos</code> y cambia los <code>src</code>.</p>
+    </section>
+
+    <!-- SOBRE / ROADMAP -->
+    <section id="sobre" class="section reveal">
+      <h2 class="section-title">Sobre la marca</h2>
+      <div class="about">
+        <div class="card">
+          <p>Somos una marca de innovación con base en España. Nuestra misión es crear productos con <b>inteligencia</b> que se sientan naturales: útiles, discretos y hermosos. Empezamos con <i>Nuclear Vision X</i> y <i>NuclearBand X</i>, y construiremos un ecosistema alrededor de ti.</p>
+          <ul>
+            <li>Atención al usuario cercana y soporte humano.</li>
+            <li>Actualizaciones OTA con nuevas funciones periódicas.</li>
+            <li>Compromiso con accesibilidad y sostenibilidad.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Hoja de ruta</h3>
+          <ol>
+            <li>Validación de prototipos (Q3).</li>
+            <li>Pilotos con early adopters (Q4).</li>
+            <li>Preventa limitada (Q1).</li>
+          </ol>
+          <p class="note">¿Quieres participar? Únete a la lista y cuéntanos tu caso de uso.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section reveal">
+      <h2 class="section-title">Contacto</h2>
+      <div class="contact-grid">
+        <form id="nh-contact" class="card" novalidate>
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="company" id="company" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" aria-hidden="true">
+          <label class="note" for="nombre">Nombre</label>
+          <input class="input" id="nombre" name="name" placeholder="Tu nombre" required minlength="2">
+          <div style="height:8px"></div>
+          <label class="note" for="email">Email</label>
+          <input class="input" id="email" name="email" type="email" placeholder="tu@email.com" required>
+          <div style="height:8px"></div>
+          <label class="note" for="msg">Mensaje</label>
+          <textarea class="input" id="msg" name="message" rows="4" placeholder="Cuéntanos qué necesitas…" required minlength="5"></textarea>
+          <div style="height:8px"></div>
+          <label style="display:flex;gap:8px;align-items:flex-start;font-size:.9rem;color:#cbd5e1">
+            <input type="checkbox" id="consent" required>
+            <span>Acepto el tratamiento de mis datos para responder a mi consulta. <a href="#" target="_blank" rel="noopener">Política de privacidad</a></span>
+          </label>
+          <div style="height:12px"></div>
+          <div id="form-status" class="note" aria-live="polite"></div>
+          <div style="height:8px"></div>
+          <button class="pill" type="submit">Enviar</button>
+        </form>
+        <div class="card">
+          <h3 style="margin-top:0">Datos y redes</h3>
+          <p class="note">info@nuclearhand.com</p>
+          <p class="note">España</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+            <a class="pill alt" href="#" aria-label="Instagram">Instagram</a>
+            <a class="pill alt" href="#" aria-label="YouTube">YouTube</a>
+            <a class="pill alt" href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a class="pill alt" href="#" aria-label="TikTok">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:6px">
+          <img src="images/logo-nuclearhand.png" alt="Nuclear Hand logo" style="height:36px;width:auto"/>
+          <span class="brand-name">Nuclear Hand</span>
+        </div>
+        <p class="note">© <span id="y"></span> Nuclear Hand. Todos los derechos reservados.</p>
+      </div>
+      <div>
+        <h4 style="margin:0 0 8px">Recursos</h4>
+        <ul style="list-style:none;padding:0;margin:0;color:#b7c2d9">
+          <li><a href="#productos">Catálogo</a></li>
+          <li><a href="#caracteristicas">Características</a></li>
+          <li><a href="#sobre">Sobre nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin:0 0 8px">Legal</h4>
+        <ul style="list-style:none;padding:0;margin:0;color:#b7c2d9">
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Términos</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Año dinámico
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Formulario -> Webhook (Zapier / n8n)
+    (function(){
+      const form   = document.getElementById('nh-contact');
+      const status = document.getElementById('form-status');
+      const WEBHOOK_URL = 'REEMPLAZA_CON_TU_WEBHOOK'; // pega aquí tu URL
+      function show(msg, ok=true){ if(!status) return; status.textContent=msg; status.style.color = ok ? '#a7f3d0' : '#fecaca'; }
+      if(!form) return;
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        if(!form.checkValidity()){ show('Revisa nombre, email y mensaje.', false); form.reportValidity(); return; }
+        const hp = document.getElementById('company'); if(hp && hp.value){ show('Enviado.', true); return; }
+        const payload = {
+          name: document.getElementById('nombre')?.value.trim() || '',
+          email: document.getElementById('email')?.value.trim() || '',
+          message: document.getElementById('msg')?.value.trim() || '',
+          consent: document.getElementById('consent')?.checked || false,
+          page: location.href, ts: new Date().toISOString()
+        };
+        try{
+          show('Enviando…');
+          const res = await fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+          if(!res.ok) throw new Error('HTTP '+res.status);
+          show('¡Gracias! Mensaje recibido.'); form.reset();
+        }catch(err){ console.error(err); show('No se pudo enviar. Escríbenos a info@nuclearhand.com', false); }
+      });
+    })();
+  </script>
+</body>
+</html>
