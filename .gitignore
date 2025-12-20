@@ -2,3 +2,10 @@ node_modules/
 .vite/
 dist/
 *.log
+_temp_*
+desktop.ini
+*_backup_*
+backup_old_site/
+studio/node_modules/
+node_modules/
+**/node_modules/
