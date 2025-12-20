@@ -1,0 +1,18 @@
+# NUCLEAR HAND - Paleta de Colores "Premium"
+
+Basado en el diseño actual (Premium v5).
+
+## Colores Principales (CSS Variables)
+- **Fondo (Dark-0):** #0a0f1e (Azul espacial profundo)
+- **Fondo Secundario:** #0f1b3d (Noche ártica)
+- **Primario (Neón):** #00d1ff (Azul Cyan Eléctrico)
+- **Primario 2 (Glow):** #6df3ff (Brillo de datos)
+- **Texto Principal:** #e8f0ff (Blanco técnico)
+- **Texto Mutado:** #9fb0d1 (Gris metal)
+- **Acento (Rings):** rgba(0, 209, 255, 0.35)
+
+## Guía de Estilo Rápida
+- **Tipografía:** Orbitron (Headings), Inter (Body).
+- **Efectos:** Glassmorphism (linear-gradient con baja opacidad + backdrop-filter blur).
+- **Bordes:** 1px solid rgba(109, 243, 255, 0.15).
+- **Radios:** 18px (Premium rounded cards).

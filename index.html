@@ -28,7 +28,7 @@
       <nav aria-label="Navegación principal">
         <ul>
           <li><a href="#productos">Productos</a></li>
-          <li><a href="#valor">Manifiesto</a></li>
+          <li><a href="#manifiesto">Manifiesto</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -42,7 +42,7 @@
         <h1>EL FUTURO NO SE ESPERA, SE PROGRAMA.</h1>
         <p>Inteligencia que amplifica tus capacidades, no que las sustituye. Tecnología invisible para la vida real.</p>
         <a class="btn" href="#productos">Explorar el Futuro</a>
-        <a class="btn secondary" href="#valor">Manifiesto</a>
+        <a class="btn secondary" href="#manifiesto">Manifiesto</a>
       </div>
     </div>
   </section>
@@ -72,37 +72,96 @@
     </div>
   </section>
 
+  <!-- MANIFIESTO (BANK IDENTITY) -->
+  <section id="manifiesto" class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: 2.5em; margin-bottom: 10px;">Manifiesto Nuclear</h2>
+        <p style="color: var(--primary); font-family: Orbitron, sans-serif; letter-spacing: 2px; font-size: 0.9em;">
+          INTERNAL OS / INFRAESTRUCTURA OPERATIVA</p>
+      </div>
+
+      <div class="grid" style="margin-bottom: 40px;">
+        <div class="card" style="grid-column: span 6;">
+          <h3>Nuestra Misión</h3>
+          <p>Convertir la volatilidad del hardware en una ventaja competitiva de ejecución. Eliminamos el "riesgo
+            operativo" mediante la automatización radical y la estandarización financiera.</p>
+        </div>
+        <div class="card" style="grid-column: span 6;">
+          <h3>Nuestra Visión</h3>
+          <p>Operar bajo el modelo de "Zero-Touch Operations". Una compañía donde la administración se autogestiona
+            mediante reglas predefinidas y datos en tiempo real.</p>
+        </div>
+      </div>
+
+      <h3 style="text-align: center; margin-bottom: 24px; font-family: Orbitron, sans-serif;">Arquitectura del Sistema
+      </h3>
+      <div class="grid">
+        <article class="card">
+          <span
+            style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; margin-bottom:8px; display:block;">Módulo
+            A</span>
+          <h4>The Vault</h4>
+          <p style="font-size: 0.9em;">Finanzas & Legal. Control de caja, pricing y márgenes. El corazón que asegura
+            unit economics saludables.</p>
+        </article>
+        <article class="card">
+          <span
+            style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; margin-bottom:8px; display:block;">Módulo
+            B</span>
+          <h4>The Brain</h4>
+          <p style="font-size: 0.9em;">Conocimiento Centralizado. Identidad de marca, SOPs y prompts maestros. La
+            memoria persistente de la empresa.</p>
+        </article>
+        <article class="card">
+          <span
+            style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; margin-bottom:8px; display:block;">Módulo
+            C</span>
+          <h4>The Engine</h4>
+          <p style="font-size: 0.9em;">Operaciones & Tech. Automatizaciones (n8n), logística y stack tecnológico. El
+            músculo que ejecuta sin fricción.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- PRODUCTOS DESTACADOS -->
   <section id="productos" class="section">
     <div class="container">
       <h2>Productos destacados</h2>
       <div class="grid">
-        <article class="card">
+        <article class="card" data-sku="NH-VX-001">
           <span
             style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:8px;">Flagship</span>
           <h3>Nuclear Vision X</h3>
           <p style="font-weight:600; color:var(--text); margin-bottom:8px;">Tu realidad, amplificada.</p>
+          <p class="product-price"
+            style="font-size: 1.2em; color: var(--primary); font-weight: 700; margin-bottom: 8px;">Consultar</p>
           <p>Navegación, mensajes y datos vitales flotando frente a tus ojos. Diseño italiano ultraligero con un núcleo
             de IA invisible.</p>
           <a href="#" style="display:inline-block; margin-top:12px; color:var(--primary); font-size:0.9em;">Ver Specs
             →</a>
         </article>
-        <article class="card">
+        <article class="card" data-sku="NH-NBX-001">
           <span
             style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:8px;">Best
             Seller</span>
           <h3>NuclearBand X</h3>
           <p style="font-weight:600; color:var(--text); margin-bottom:8px;">El tiempo es tuyo.</p>
+          <p class="product-price"
+            style="font-size: 1.2em; color: var(--primary); font-weight: 700; margin-bottom: 8px;">Consultar</p>
           <p>Reloj de tinta electrónica (E-Ink) con IA proactiva. Filtra el ruido digital para que recuperes tu foco
             absoluto. 14 días de batería.</p>
           <a href="#" style="display:inline-block; margin-top:12px; color:var(--primary); font-size:0.9em;">Ver Specs
             →</a>
         </article>
-        <article class="card">
+        <article class="card" data-sku="NH-LV-001">
           <span
             style="color:var(--muted); font-size: 0.8em; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:8px;">Próximamente</span>
           <h3>LuxeVibe</h3>
           <p style="font-weight:600; color:var(--text); margin-bottom:8px;">Inteligencia biológica visible.</p>
+          <p class="product-price" style="font-size: 1.2em; color: var(--muted); font-weight: 700; margin-bottom: 8px;">
+            Próximamente</p>
           <p>Un laboratorio de salud clínica en tu dedo. Sin pantallas, solo datos puros de recuperación y vitalidad.
           </p>
           <a href="#" style="display:inline-block; margin-top:12px; color:var(--muted); font-size:0.9em;">Unirse a la
@@ -152,12 +211,39 @@
       <div style="margin-top:8px; font-size:0.9em;">
         <a href="#" style="margin:0 8px;">Privacidad Radical</a> ·
         <a href="#" style="margin:0 8px;">Términos</a> ·
-        <a href="#" style="margin:0 8px;">Manifiesto</a> ·
+        <a href="#manifiesto" style="margin:0 8px;">Manifiesto</a> ·
         <a href="#" style="margin:0 8px;">Soporte</a>
       </div>
       <div style="margin-top:12px; font-size:0.8em; opacity:0.6;">Control total. Sin fricción.</div>
     </div>
   </footer>
+  <!-- PRICING LOADER -->
+  <script type="module">
+    import { fetchPrices, formatPrice } from './js/pricing.js';
+
+    async function initPricing() {
+      console.log('--- NH Pricing Loader Initialized ---');
+      const prices = await fetchPrices();
+
+      document.querySelectorAll('[data-sku]').forEach(card => {
+        const sku = card.getAttribute('data-sku');
+        const priceElement = card.querySelector('.product-price');
+
+        if (prices[sku]) {
+          priceElement.textContent = formatPrice(prices[sku]);
+          console.log(`[Pricing] Updated ${sku}: ${prices[sku]}€`);
+        } else {
+          console.warn(`[Pricing] SKU not found in CSV: ${sku}`);
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPricing);
+    } else {
+      initPricing();
+    }
+  </script>
 </body>
 
 </html>
