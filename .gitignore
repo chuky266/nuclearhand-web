@@ -9,3 +9,4 @@ backup_old_site/
 studio/node_modules/
 node_modules/
 **/node_modules/
+.env
