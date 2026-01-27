@@ -4,13 +4,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/dynamic-bg.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/dynamic-bg.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700&display=swap"
     rel="stylesheet">
-  <title>Nuclear Hand - Dynamic</title>
+  <title>Nuclear Hand 5 Alpha | IA Local Privada & Estética Cyberpunk</title>
+  <meta name="description"
+    content="Descubre Nuclear Hand 5: Wearables de IA local radicalmente privada. Nuclear Vision X y NuclearBand X diseñados para ampliar tu realidad con control total.">
+
+  <!-- OpenGraph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nuclearhand.com">
+  <meta property="og:title" content="Nuclear Hand 5 | IA Local & Privacidad Radical">
+  <meta property="og:description"
+    content="Bienvenidos a la Alpha de Nuclear Hand 5. Wearables con IA local privada y diseño Cyberpunk. Toma el control de tu información.">
+  <meta property="og:image" content="https://nuclearhand.com/images/backgrounds/nh_bg_hero_abstract.png">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nuclearhand.com">
+  <meta name="twitter:title" content="Nuclear Hand 5 | IA Local & Privacidad Radical">
+  <meta name="twitter:description"
+    content="Descubre la Alpha de Nuclear Hand 5. Wearables de IA local privada. Nuclear Vision X y NuclearBand X.">
+  <meta name="twitter:image" content="https://nuclearhand.com/images/backgrounds/nh_bg_hero_abstract.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- NH: GA4 (Ready for Deployment) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NUCLEARHOT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-NUCLEARHOT');
+  </script>
 </head>
 
 <body>
@@ -22,12 +52,12 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo-wrap" aria-label="Volver al inicio">
-        <img src="images/logo.png" alt="Logo Nuclear Hand" class="logo">
+        <img src="/images/logo.png" alt="Logo Nuclear Hand" class="logo">
         <span class="brand">NUCLEAR HAND</span>
       </a>
       <nav aria-label="Navegación principal">
         <ul>
-          <li><a href="#productos">Productos</a></li>
+          <li><a href="#locoshop">LocoShop</a></li>
           <li><a href="#manifiesto">Manifiesto</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -41,8 +71,10 @@
       <div class="hero-box">
         <h1>EL FUTURO NO SE ESPERA, SE PROGRAMA.</h1>
         <p>Inteligencia que amplifica tus capacidades, no que las sustituye. Tecnología invisible para la vida real.</p>
-        <a class="btn" href="#productos">Explorar el Futuro</a>
-        <a class="btn secondary" href="#manifiesto">Manifiesto</a>
+        <div class="hero-btns">
+          <a class="btn" href="#locoshop">Explorar el Futuro</a>
+          <a class="btn secondary" href="#manifiesto">Manifiesto</a>
+        </div>
       </div>
     </div>
   </section>
@@ -72,25 +104,25 @@
     </div>
   </section>
 
-  <!-- MANIFIESTO (BANK IDENTITY) -->
+  <!-- MANIFIESTO (NUCLEARBANK INTERNAL OS) -->
   <section id="manifiesto" class="section">
     <div class="container">
       <div style="text-align: center; margin-bottom: 40px;">
         <h2 style="font-size: 2.5em; margin-bottom: 10px;">Manifiesto Nuclear</h2>
         <p style="color: var(--primary); font-family: Orbitron, sans-serif; letter-spacing: 2px; font-size: 0.9em;">
-          INTERNAL OS / INFRAESTRUCTURA OPERATIVA</p>
+          NUCLEARBANK / INFRAESTRUCTURA OPERATIVA</p>
       </div>
 
       <div class="grid" style="margin-bottom: 40px;">
         <div class="card" style="grid-column: span 6;">
-          <h3>Nuestra Misión</h3>
-          <p>Convertir la volatilidad del hardware en una ventaja competitiva de ejecución. Eliminamos el "riesgo
-            operativo" mediante la automatización radical y la estandarización financiera.</p>
+          <h3>Misión</h3>
+          <p>Convertir la volatilidad del hardware en una <strong>ventaja competitiva de ejecución</strong>. Eliminamos
+            el riesgo operativo mediante la automatización radical y la estandarización financiera.</p>
         </div>
         <div class="card" style="grid-column: span 6;">
-          <h3>Nuestra Visión</h3>
-          <p>Operar bajo el modelo de "Zero-Touch Operations". Una compañía donde la administración se autogestiona
-            mediante reglas predefinidas y datos en tiempo real.</p>
+          <h3>Visión</h3>
+          <p>Operar bajo el modelo de <strong>"Zero-Touch Operations"</strong>. Una compañía donde la administración se
+            autogestiona mediante reglas predefinidas y datos en tiempo real.</p>
         </div>
       </div>
 
@@ -98,86 +130,92 @@
       </h3>
       <div class="grid">
         <article class="card">
-          <span
-            style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; margin-bottom:8px; display:block;">Módulo
-            A</span>
+          <span class="badge">Módulo A</span>
           <h4>The Vault</h4>
           <p style="font-size: 0.9em;">Finanzas & Legal. Control de caja, pricing y márgenes. El corazón que asegura
-            unit economics saludables.</p>
+            unit economics saludables antes de escalar.</p>
         </article>
         <article class="card">
-          <span
-            style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; margin-bottom:8px; display:block;">Módulo
-            B</span>
+          <span class="badge">Módulo B</span>
           <h4>The Brain</h4>
           <p style="font-size: 0.9em;">Conocimiento Centralizado. Identidad de marca, SOPs y prompts maestros. La
-            memoria persistente de la empresa.</p>
+            memoria persistente que garantiza la excelencia.</p>
         </article>
         <article class="card">
-          <span
-            style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; margin-bottom:8px; display:block;">Módulo
-            C</span>
+          <span class="badge">Módulo C</span>
           <h4>The Engine</h4>
-          <p style="font-size: 0.9em;">Operaciones & Tech. Automatizaciones (n8n), logística y stack tecnológico. El
-            músculo que ejecuta sin fricción.</p>
+          <p style="font-size: 0.9em;">Operaciones & Tech. Automatizaciones, logística y stack tecnológico. El músculo
+            que ejecuta con precisión militar.</p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- PRODUCTOS DESTACADOS -->
-  <section id="productos" class="section">
+  <section id="locoshop" class="section">
     <div class="container">
-      <h2>Productos destacados</h2>
+      <h2>LocoShop</h2>
+
+      <!-- LOCOSHOP HERO -->
+      <div class="locoshop-hero-block scroll-reveal">
+        <img src="/assets/locoshop/vision-x-hero.png" alt="Nuclear Vision X - El futuro de la realidad aumentada"
+          class="locoshop-hero-img">
+        <div class="locoshop-hero-overlay">
+          <span class="tagline">TECNOLOGÍA ALPHA FLAGSHIP</span>
+          <h3>Nuclear Vision X</h3>
+          <p>Realidad aumentada de alta precisión. Disponibilidad limitada.</p>
+        </div>
+      </div>
+
       <div class="grid">
-        <article class="card" data-sku="NH-VX-001">
+        <article class="card nh-card-glass scroll-reveal" data-sku="NH-VX-001">
           <div class="card-image">
-            <img src="images/products/nuclearvisionx.png"
-              alt="Gafas de realidad aumentada Nuclear Vision X con interfaz holográfica" loading="lazy">
+            <img src="/assets/locoshop/vision-x-card.png"
+              alt="Gafas inteligentes Nuclear Vision X - Realidad Aumentada de Alta Precisión" loading="lazy">
           </div>
-          <span
-            style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:8px;">Flagship</span>
+          <span class="badge">Flagship Premium</span>
           <h3>Nuclear Vision X</h3>
           <p style="font-weight:600; color:var(--text); margin-bottom:8px;">Tu realidad, amplificada.</p>
           <p class="product-price"
-            style="font-size: 1.2em; color: var(--primary); font-weight: 700; margin-bottom: 8px;">Consultar</p>
+            style="font-size: 1.2em; color: var(--primary); font-weight: 700; margin-bottom: 8px;">399,00 €</p>
           <p>Navegación, mensajes y datos vitales flotando frente a tus ojos. Diseño italiano ultraligero con un núcleo
             de IA invisible.</p>
-          <a href="#" style="display:inline-block; margin-top:12px; color:var(--primary); font-size:0.9em;">Ver Specs
+          <a href="nuclear-vision-x.html"
+            style="display:inline-block; margin-top:12px; color:var(--primary); font-size:0.9em;">Ver Specs
             →</a>
         </article>
-        <article class="card" data-sku="NH-NBX-001">
+        <article class="card nh-card-glass scroll-reveal" data-sku="NH-NBX-001">
           <div class="card-image">
-            <img src="images/products/nuclearbandx.png"
-              alt="Smartwatch NuclearBand X con pantalla de tinta electrónica y diseño minimalista" loading="lazy">
+            <img src="/assets/locoshop/band-x-card.png"
+              alt="Reloj inteligente NuclearBand X - Tinta Electrónica Proactiva" loading="lazy" width="800"
+              height="450">
           </div>
-          <span
-            style="color:var(--primary); font-size: 0.8em; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:8px;">Best
-            Seller</span>
+          <span class="badge">Best Seller</span>
           <h3>NuclearBand X</h3>
           <p style="font-weight:600; color:var(--text); margin-bottom:8px;">El tiempo es tuyo.</p>
           <p class="product-price"
-            style="font-size: 1.2em; color: var(--primary); font-weight: 700; margin-bottom: 8px;">Consultar</p>
+            style="font-size: 1.2em; color: var(--primary); font-weight: 700; margin-bottom: 8px;">149,00 €</p>
           <p>Reloj de tinta electrónica (E-Ink) con IA proactiva. Filtra el ruido digital para que recuperes tu foco
             absoluto. 14 días de batería.</p>
-          <a href="#" style="display:inline-block; margin-top:12px; color:var(--primary); font-size:0.9em;">Ver Specs
+          <a href="nuclearband-x.html"
+            style="display:inline-block; margin-top:12px; color:var(--primary); font-size:0.9em;">Ver Specs
             →</a>
         </article>
-        <article class="card" data-sku="NH-LV-001">
+        <article class="card nh-card-glass scroll-reveal" data-sku="NH-LV-001">
           <div class="card-image">
-            <img src="images/products/comingsoon.png"
-              alt="Anillo inteligente LuxeVibe, laboratorio de salud en tu dedo (Próximamente)" loading="lazy">
+            <img src="/images/products/comingsoon.png" alt="Anillo inteligente Nuclear Ring - Próximamente"
+              loading="lazy">
           </div>
-          <span
-            style="color:var(--muted); font-size: 0.8em; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:8px;">Próximamente</span>
-          <h3>LuxeVibe</h3>
-          <p style="font-weight:600; color:var(--text); margin-bottom:8px;">Inteligencia biológica visible.</p>
+          <span class="badge" style="color:var(--muted)">Alpha Preview</span>
+          <h3>Nuclear Ring (Alpha)</h3>
+          <p style="font-weight:600; color:var(--text); margin-bottom:8px;">Inteligencia biológica invisible.</p>
           <p class="product-price" style="font-size: 1.2em; color: var(--muted); font-weight: 700; margin-bottom: 8px;">
-            Próximamente</p>
+            TBA (Alpha Access)</p>
           <p>Un laboratorio de salud clínica en tu dedo. Sin pantallas, solo datos puros de recuperación y vitalidad.
           </p>
-          <a href="#" style="display:inline-block; margin-top:12px; color:var(--muted); font-size:0.9em;">Unirse a la
-            Lista →</a>
+          <a href="#contacto" class="btn" data-interest="luxevibe"
+            style="display:inline-block; margin-top:12px; color:var(--muted); font-size:0.9em;">Unirse a la
+            Espera →</a>
         </article>
       </div>
     </div>
@@ -194,23 +232,64 @@
     </div>
   </section>
 
-  <!-- CONTACTO (New Section Merged) -->
   <section id="contacto" class="section">
-    <div class="container" style="text-align:center;">
-      <h2 style="margin-bottom: 24px;">Contacto</h2>
-      <div class="value-items"> <!-- Reusing value-items for premium card look -->
-        <div class="value-item">
-          <strong>✉️ Email</strong>
-          <span>info@nuclearhand.com</span>
-        </div>
-        <div class="value-item">
-          <strong>📍 Ubicación</strong>
-          <span>Barcelona, España</span>
-        </div>
-        <div class="value-item">
-          <strong>🌐 Redes</strong>
-          <span><a href="#" style="color:var(--text);">Twitter</a> · <a href="#"
-              style="color:var(--text);">LinkedIn</a></span>
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom: 32px;">Contacto del Sistema</h2>
+      <div class="nh-contact-panel scroll-reveal">
+        <header class="panel-header">
+          <span class="command-line">> get --info contact</span>
+        </header>
+
+        <div class="panel-body">
+          <div class="contact-grid">
+            <div class="contact-info">
+              <div class="contact-item">
+                <span class="label">EMAIL</span>
+                <a href="mailto:info@nuclearhand.com" class="value">info@nuclearhand.com</a>
+              </div>
+              <div class="contact-item">
+                <span class="label">LOC</span>
+                <span class="value">Barcelona, España</span>
+              </div>
+              <div class="contact-item">
+                <span class="label">REDES</span>
+                <div class="value links">
+                  <a href="https://www.linkedin.com/company/nuclearhand" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn de Nuclear Hand">LinkedIn</a>
+                  <span class="sep">·</span>
+                  <a href="https://www.instagram.com/nuclearhand31" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram de Nuclear Hand">Instagram</a>
+                  <span class="sep">·</span>
+                  <a href="https://www.tiktok.com/@nuclearhand1" target="_blank" rel="noopener noreferrer"
+                    aria-label="TikTok de Nuclear Hand">TikTok</a>
+                  <span class="sep">·</span>
+                  <a href="https://www.youtube.com/@NuclearHand-f9d5g" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube de Nuclear Hand">YouTube</a>
+                  <!-- <span class="sep">·</span> -->
+                  <!-- <a href="https://x.com/nuclearhand" target="_blank" rel="noopener noreferrer">X</a> -->
+                </div>
+              </div>
+            </div>
+
+            <!-- CONTACT FORM -->
+            <form id="contact-form" class="nh-form">
+              <div class="form-group">
+                <label for="name" class="label">ID / NAME</label>
+                <input type="text" id="name" name="name" placeholder="Operador / Nombre..." required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="label">SECURE EMAIL</label>
+                <input type="email" id="email" name="email" placeholder="id@correo.sh / tu@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="message" class="label">COMMAND / MESSAGE</label>
+                <textarea id="message" name="message" rows="4" placeholder="¿Qué comando deseas ejecutar?..."
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn form-submit">Enviar Comando</button>
+              <div id="form-status" class="form-status"></div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -219,26 +298,49 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <div>© 2025 Nuclear Hand. Designed in Barcelona.</div>
+      <div style="margin-bottom: 20px;">
+        <div class="footer-socials"
+          style="display: flex; justify-content: center; gap: 20px; font-family: Orbitron, sans-serif; font-size: 0.8em; letter-spacing: 1px;">
+          <a href="https://www.linkedin.com/company/nuclearhand" target="_blank" rel="noopener noreferrer"
+            style="color: var(--primary);" aria-label="LinkedIn">LINKEDIN</a>
+          <a href="https://www.instagram.com/nuclearhand31" target="_blank" rel="noopener noreferrer"
+            style="color: var(--primary);" aria-label="Instagram">INSTAGRAM</a>
+          <a href="https://www.tiktok.com/@nuclearhand1" target="_blank" rel="noopener noreferrer"
+            style="color: var(--primary);" aria-label="TikTok">TIKTOK</a>
+          <a href="https://www.youtube.com/@NuclearHand-f9d5g" target="_blank" rel="noopener noreferrer"
+            style="color: var(--primary);" aria-label="YouTube">YOUTUBE</a>
+          <!-- <a href="https://x.com/nuclearhand" target="_blank" rel="noopener noreferrer" style="color: var(--primary);">X</a> -->
+        </div>
+      </div>
+      <div>© 2026 Nuclear Hand. Designed in Barcelona.</div>
       <div style="margin-top:8px; font-size:0.9em;">
-        <a href="#" style="margin:0 8px;">Privacidad Radical</a> ·
-        <a href="#" style="margin:0 8px;">Términos</a> ·
+        <a href="privacy.html" style="margin:0 8px;">Privacidad Radical</a> ·
+        <a href="terms.html" style="margin:0 8px;">Términos</a> ·
         <a href="#manifiesto" style="margin:0 8px;">Manifiesto</a> ·
-        <a href="#" style="margin:0 8px;">Soporte</a>
+        <a href="mailto:info@nuclearhand.com" style="margin:0 8px;">Soporte</a>
       </div>
       <div style="margin-top:12px; font-size:0.8em; opacity:0.6;">Control total. Sin fricción.</div>
     </div>
   </footer>
   <!-- PRICING LOADER -->
+  <script src="/js/scroll-animations.js" defer></script>
   <script type="module">
-    import { fetchPrices, formatPrice } from './js/pricing.js';
+    import { fetchPrices, formatPrice } from '/js/pricing.js';
+
+    // NH: GA4 Event Helpers
+    function trackGAEvent(name, params) {
+      if (typeof gtag === 'function') {
+        gtag('event', name, params);
+        console.log(`[GA4] Event Tracked: ${name}`, params);
+      }
+    }
 
     async function initPricing() {
       console.log('--- NH Pricing Loader Initialized ---');
       const prices = await fetchPrices();
 
       document.querySelectorAll('[data-sku]').forEach(card => {
-        const sku = card.getAttribute('data-sku');
+        const sku = card.getAttribute('data-sku').trim().toUpperCase();
         const priceElement = card.querySelector('.product-price');
 
         if (prices[sku]) {
@@ -248,12 +350,84 @@
           console.warn(`[Pricing] SKU not found in CSV: ${sku}`);
         }
       });
+
+      // view_item_list event
+      trackGAEvent('view_item_list', {
+        item_list_id: 'locoshop_main',
+        item_list_name: 'LocoShop Main Grid'
+      });
+    }
+
+    // New helper for future backend integration
+    window.sendContact = async function (payload) {
+      console.log('[NH] Payload ready for backend:', payload);
+      // Future: fetch(WEBHOOK_URL, ...)
+      return new Promise((resolve) => setTimeout(resolve, 1500));
+    };
+
+    // CONTACT FORM LOGIC
+    function initContactForm() {
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+
+      if (!form) return;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.textContent = '> Processing request...';
+        status.className = 'form-status';
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        // Basic validation check
+        if (!data.name || !data.email || !data.message) {
+          status.textContent = '> ERROR: Missing required parameters.';
+          status.className = 'form-status error';
+          return;
+        }
+
+        try {
+          await window.sendContact(data);
+          status.textContent = '> SUCCESS: Message transmitted to Terminal NH. Enviado ✓';
+          status.className = 'form-status success';
+
+          trackGAEvent('generate_lead', {
+            event_category: 'Contact',
+            event_label: 'Main Page Form'
+          });
+
+          form.reset();
+        } catch (err) {
+          status.textContent = '> ERROR: Transmission failed.';
+          status.className = 'form-status error';
+        }
+      });
+    }
+
+    // select_promo & navigation tracking
+    function initTracking() {
+      document.querySelectorAll('a.btn, a[href^="nuclear-"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const label = link.textContent.trim() || link.getAttribute('aria-label');
+          trackGAEvent('select_promo', {
+            promotion_name: label,
+            location_id: 'index_page'
+          });
+        });
+      });
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initPricing);
+      document.addEventListener('DOMContentLoaded', () => {
+        initPricing();
+        initContactForm();
+        initTracking();
+      });
     } else {
       initPricing();
+      initContactForm();
+      initTracking();
     }
   </script>
 </body>

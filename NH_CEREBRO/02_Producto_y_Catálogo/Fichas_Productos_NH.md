@@ -175,3 +175,45 @@ No solo es para IA. Es tu servidor de archivos, tu gestor de contraseñas y el c
     *   R: Viene con NuclearOS preinstalado. "Plug & Play" para usuarios básicos, terminal root abierta para hackers.
 *   **P: ¿Qué modelos de IA ejecuta?**
     *   R: Optimizado para modelos cuantizados de 7B a 13B parámetros con respuesta instantánea.
+---
+
+# 🚀 [PROPUESTA] Contenido Estructurado para Web (Pre-Lanzamiento)
+
+> [!NOTE]
+> Estos bloques de texto están diseñados para ser pegados directamente en el HTML una vez aprobados. Mantienen el tono "Cyberpunk Comercial" y la estructura técnica.
+
+## A. Home: Tarjetas de Producto (Resumen)
+
+| Producto | Título Propuesto | Hook (1 línea) | Specs destacadas |
+| :--- | :--- | :--- | :--- |
+| **Vision X** | **Nuclear Vision X** | Tu realidad, amplificada. | IA Local / 42g / MicroLED |
+| **Band X** | **NuclearBand X** | El tiempo es tuyo. | E-Ink / 14 días bat. / Silencioso |
+| **LuxeVibe** | **LuxeVibe Ring** | Inteligencia biológica invisible. | Titanio / Sensor PPG / Bio-Feedback |
+
+## B. Página de Producto: Nuclear Vision X (Detalle)
+
+- **Título Principal**: Nuclear Vision X Flagship
+- **Hook de Ventas**: "No es un metaverso. Es tu universo, pero mejorado."
+- **Estructura de Beneficios**:
+    1. **Heads-Up Life**: Mirada al frente, manos libres.
+    2. **Stealth Design**: Estética clásica, alma futurista.
+    3. **Soberanía de Datos**: Procesamiento 100% offline.
+- **Especificaciones Técnicas**:
+    - Pantalla MicroLED alta densidad.
+    - Procesador Nuclear Core S1.
+    - Audio por conducción ósea.
+    - 42 gramos de peso total.
+
+## C. Página de Producto: NuclearBand X (Detalle)
+
+- **Título Principal**: NuclearBand X Elite
+- **Hook de Ventas**: "Recupera el dominio de tu atención."
+- **Estructura de Beneficios**:
+    1. **Deep Focus**: Filtrado inteligente de notificaciones.
+    2. **Visibilidad Táctica**: Pantalla E-Ink sin reflejos.
+    3. **Energía Nuclear**: 2 semanas de autonomía real.
+- **Especificaciones Técnicas**:
+    - Cuerpo de Aluminio Aeroespacial CNC.
+    - Sensor Bio-Tracker 4.0.
+    - OS NuclearOS (Tiempo real).
+    - Resistencia 5 ATM (Sumergible).

@@ -1,0 +1,9 @@
+﻿C:\Users\User\Documents\nuclear-hand 5\public\assets
+C:\Users\User\Documents\nuclear-hand 5\public\apple-touch-icon.png
+C:\Users\User\Documents\nuclear-hand 5\public\favicon.png
+C:\Users\User\Documents\nuclear-hand 5\public\maestra_precios.csv
+C:\Users\User\Documents\nuclear-hand 5\public\prices.csv
+C:\Users\User\Documents\nuclear-hand 5\public\assets\locoshop
+C:\Users\User\Documents\nuclear-hand 5\public\assets\locoshop\band-x-card.png
+C:\Users\User\Documents\nuclear-hand 5\public\assets\locoshop\vision-x-card.png
+C:\Users\User\Documents\nuclear-hand 5\public\assets\locoshop\vision-x-hero.png

@@ -5,7 +5,7 @@
 
 export async function fetchPrices() {
   try {
-    const response = await fetch('/maestra_precios.csv');
+    const response = await fetch('/prices.csv');
     const csvText = await response.text();
     const lines = csvText.split('\n');
     const priceMap = {};
@@ -18,7 +18,7 @@ export async function fetchPrices() {
       const columns = line.split(';');
       if (columns.length < 11) continue;
 
-      const sku = columns[0].trim();
+      const sku = columns[0].trim().toUpperCase();
       let pvpStr = columns[10].trim(); // PVP is at index 10
 
       // Parse Spanish decimal format (1.234,56 -> 1234.56)
@@ -41,5 +41,7 @@ export function formatPrice(amount) {
   return new Intl.NumberFormat('es-ES', {
     style: 'currency',
     currency: 'EUR',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
   }).format(amount);
 }
