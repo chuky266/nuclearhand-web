@@ -1,0 +1,54 @@
+﻿
+> nuclear-hand-5@1.0.0 build
+> vite build
+
+[36mvite v4.5.14 [32mbuilding for production...[36m[39m
+transforming...
+[32mÔ£ô[39m 15 modules transformed.
+[32mÔ£ô built in 106ms[39m
+node.exe : [31mCould 
+not resolve 
+"./js/pricing.js" from 
+"js/vision-logic.js"[39m
+En C:\Program 
+Files\nodejs\npm.ps1: 29 
+Carácter: 3
++   & $NODE_EXE 
+$NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo       
+       : NotSpecified:   
+  ([31mCould not ...-   
+ logic.js"[39m:Strin    
+g) [], RemoteExcepti    
+on
+    + FullyQualifiedErro 
+   rId : NativeCommandE  
+  rror
+ 
+file: [36mC:/Users/User/
+Documents/nuclear-hand 
+5/js/vision-logic.js[39m
+[31merror during build:
+RollupError: Could not 
+resolve 
+"./js/pricing.js" from 
+"js/vision-logic.js"
+    at error (file:///C:/
+Users/User/Documents/nucl
+ear-hand%205/node_modules
+/rollup/dist/es/shared/no
+de-entry.js:2287:30)
+    at ModuleLoader.handl
+eInvalidResolvedId (file:
+///C:/Users/User/Document
+s/nuclear-hand%205/node_m
+odules/rollup/dist/es/sha
+red/node-entry.js:24860:2
+4)
+    at file:///C:/Users/U
+ser/Documents/nuclear-han
+d%205/node_modules/rollup
+/dist/es/shared/node-entr
+y.js:24822:26[39m

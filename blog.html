@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dynamic-bg.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700&display=swap"
+        rel="stylesheet">
+    <title>Biblioteca Nuclear | Blog & Archivos de Soberanía Digital</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="description"
+        content="Accede a la Biblioteca Nuclear: Artículos sobre IA Local, Soberanía Digital y el ecosistema de Nuclear Hand 5. High Tech. High Life.">
+
+    <!-- OpenGraph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nuclearhand.com/blog.html">
+    <meta property="og:title" content="Biblioteca Nuclear | Blog de Nuclear Hand 5">
+    <meta property="og:description"
+        content="Explora nuestra biblioteca de archivos sobre amplificación humana y privacidad radical.">
+    <meta property="og:image" content="https://nuclearhand.com/images/backgrounds/nh_bg_hero_abstract.png">
+    <link rel="stylesheet" href="css/blog.css">
+    <style>
+        .blog-list {
+            display: grid;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 209, 255, 0.1);
+            padding: 32px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .blog-card:hover {
+            border-color: var(--primary);
+            background: rgba(0, 209, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .blog-card h2 {
+            margin-top: 0;
+            color: var(--primary);
+            font-family: Orbitron, sans-serif;
+            font-size: 1.5em;
+        }
+
+        .blog-card p {
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dynamic Background Layers -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-rays" aria-hidden="true"></div>
+    <div class="bg-particles" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo-wrap" aria-label="Volver al inicio">
+                <img src="/images/logo.png" alt="Logo Nuclear Hand" class="logo">
+                <span class="brand">NUCLEAR HAND</span>
+            </a>
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html#locoshop">LocoShop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#manifiesto">Manifiesto</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="blog-content">
+            <h1
+                style="text-align: center; font-family: Orbitron, sans-serif; color: var(--primary); margin-bottom: 10px;">
+                BIBLIOTECA NUCLEAR</h1>
+            <p style="text-align: center; color: var(--muted); margin-bottom: 40px;">Archivos de soberanía digital y
+                amplificación humana.</p>
+
+            <div class="blog-list">
+                <a href="blog-1.html" class="blog-card scroll-reveal">
+                    <div class="blog-meta">Archivo #001 / Mindset Nuclear</div>
+                    <h2>Soberanía Digital: Por qué tu Segunda Mente debe vivir en local</h2>
+                    <p>Descubre por qué delegar tu inteligencia a la nube es un error estratégico y cómo la IA local
+                        protege tu futuro.</p>
+                </a>
+                <!-- Future posts here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div>© 2026 Nuclear Hand. Designed in Barcelona.</div>
+            <div style="margin-top:12px; font-size:0.8em; opacity:0.6;">High Tech. High Life.</div>
+        </div>
+    </footer>
+
+    <script src="js/scroll-animations.js" type="module"></script>
+</body>
+
+</html>

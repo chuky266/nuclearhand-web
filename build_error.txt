@@ -1,0 +1,106 @@
+﻿
+> nuclear-hand-5@1.0.0 build
+> vite build
+
+[36mvite v4.5.14 [32mbuilding for production...[36m[39m
+node.exe : <script src="j
+s/scroll-animations.js"> 
+in 
+"/nuclear-vision-x.html" 
+can't be bundled without 
+type="module" attribute
+En C:\Program 
+Files\nodejs\npm.ps1: 29 
+Carácter: 3
++   & $NODE_EXE 
+$NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo       
+       : NotSpecified:   
+  (<script src="js...d   
+ ule" attribute:Strin    
+g) [], RemoteExcepti    
+on
+    + FullyQualifiedErro 
+   rId : NativeCommandE  
+  rror
+ 
+<script src="js/scroll-an
+imations.js"> in 
+"/blog-1.html" can't be 
+bundled without 
+type="module" attribute
+<script src="js/scroll-an
+imations.js"> in 
+"/nuclearband-x.html" 
+can't be bundled without 
+type="module" attribute
+<script src="js/scroll-an
+imations.js"> in 
+"/privacy.html" can't be 
+bundled without 
+type="module" attribute
+<script src="js/scroll-an
+imations.js"> in 
+"/terms.html" can't be 
+bundled without 
+type="module" attribute
+transforming...
+[32mÔ£ô[39m 3 modules transformed.
+[32mÔ£ô built in 78ms[39m
+[31m[vite:html-inline-pr
+oxy] Could not load 
+C:UsersUserDocuments
+uclear-hand 5log-1.html?
+html-proxy&inline-css&ind
+ex=0.css (imported by 
+blog-1.html): No 
+matching HTML proxy 
+module found from 
+C:UsersUserDocuments
+uclear-hand 5log-1.html?
+html-proxy&inline-css&ind
+ex=0.css[39m
+[31merror during build:
+Error: Could not load 
+C:UsersUserDocuments
+uclear-hand 5log-1.html?
+html-proxy&inline-css&ind
+ex=0.css (imported by 
+blog-1.html): No 
+matching HTML proxy 
+module found from 
+C:UsersUserDocuments
+uclear-hand 5log-1.html?
+html-proxy&inline-css&ind
+ex=0.css
+    at Object.load (file:
+///C:/Users/User/Document
+s/nuclear-hand%205/node_m
+odules/vite/dist/node/chu
+nks/dep-827b23df.js:37404
+:27)
+    at file:///C:/Users/U
+ser/Documents/nuclear-han
+d%205/node_modules/rollup
+/dist/es/shared/node-entr
+y.js:25544:40
+    at async PluginDriver
+.hookFirstAndGetPlugin (f
+ile:///C:/Users/User/Docu
+ments/nuclear-hand%205/no
+de_modules/rollup/dist/es
+/shared/node-entry.js:254
+44:28)
+    at async file:///C:/U
+sers/User/Documents/nucle
+ar-hand%205/node_modules/
+rollup/dist/es/shared/nod
+e-entry.js:24611:75
+    at async Queue.work (
+file:///C:/Users/User/Doc
+uments/nuclear-hand%205/n
+ode_modules/rollup/dist/e
+s/shared/node-entry.js:25
+654:32)[39m

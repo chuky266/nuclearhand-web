@@ -202,35 +202,8 @@
         </div>
     </footer>
 
-    <script src="js/scroll-animations.js" defer></script>
-    <script type="module">
-        import { fetchPrices, formatPrice } from './js/pricing.js';
-
-        async function initPricing() {
-            const prices = await fetchPrices();
-            const priceElement = document.querySelector('.product-price');
-            const sku = document.querySelector('[data-sku]').getAttribute('data-sku');
-
-            if (prices[sku]) {
-                priceElement.textContent = formatPrice(prices[sku]);
-            }
-
-            // view_item event
-            if (typeof gtag === 'function') {
-                gtag('event', 'view_item', {
-                    currency: 'EUR',
-                    value: prices[sku] || 0,
-                    items: [{
-                        item_id: sku,
-                        item_name: 'Nuclear Vision X'
-                    }]
-                });
-                console.log('[GA4] Event Tracked: view_item', sku);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', initPricing);
-    </script>
+    <script src="js/scroll-animations.js" type="module"></script>
+    <script type="module" src="js/vision-logic.js"></script>
 </body>
 
 </html>
