@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/dynamic-bg.css">
+    <link rel="stylesheet" href="/nh5/css/styles.css">
+    <link rel="stylesheet" href="/nh5/css/dynamic-bg.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700&display=swap"
         rel="stylesheet">
     <title>Nuclear Vision X – Classic Edition | Gafas de IA Local | Nuclear Hand</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/nh5/favicon.ico">
     <meta name="description"
         content="Nuclear Vision X – Classic Edition: 42g de ingeniería Cyberpunk. IA local privada para amplificar tu universo cotidiano sin distracciones.">
 
@@ -31,7 +31,7 @@
     <meta name="twitter:image" content="https://nuclearhand.com/images/products/nuclearvisionx (2).png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
 
     <!-- NH: GA4 (Ready for Deployment) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NUCLEARHOT"></script>
@@ -51,15 +51,15 @@
 
     <header class="site-header">
         <div class="container header-inner">
-            <a href="index.html" class="logo-wrap" aria-label="Volver al inicio">
-                <img src="images/logo.png" alt="Logo Nuclear Hand" class="logo">
+            <a href="/nh5/index.html" class="logo-wrap" aria-label="Volver al inicio">
+                <img src="/nh5/images/logo.png" alt="Logo Nuclear Hand" class="logo">
                 <span class="brand">NUCLEAR HAND</span>
             </a>
             <nav aria-label="Navegación principal">
                 <ul>
-                    <li><a href="index.html#locoshop">Productos</a></li>
-                    <li><a href="index.html#manifiesto">Manifiesto</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="/nh5/index.html#locoshop">Productos</a></li>
+                    <li><a href="/nh5/index.html#manifiesto">Manifiesto</a></li>
+                    <li><a href="/nh5/index.html#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -77,7 +77,7 @@
 
         <div class="detail-grid">
             <div class="product-main-image scroll-reveal">
-                <img src="images/products/nuclearvisionx (2).png"
+                <img src="/nh5/images/products/nuclearvisionx (2).png"
                     alt="Nuclear Vision X Flagship Edition - Gafas Inteligentes de IA Local">
             </div>
             <div class="content-block scroll-reveal">
@@ -169,8 +169,8 @@
                 icónico.</p>
             <span class="current-price product-price">399,00 €</span>
             <div class="action-buttons">
-                <a href="index.html#locoshop" class="btn">Reservar mi unidad</a>
-                <a href="index.html#locoshop" class="btn secondary">Volver al Catálogo</a>
+                <a href="/nh5/index.html#locoshop" class="btn">Reservar mi unidad</a>
+                <a href="/nh5/index.html#locoshop" class="btn secondary">Volver al Catálogo</a>
             </div>
         </section>
     </main>
@@ -201,36 +201,8 @@
             <div style="margin-top:12px; font-size:0.8em; opacity:0.6;">Control total. Sin fricción.</div>
         </div>
     </footer>
-
-    <script src="js/scroll-animations.js" defer></script>
-    <script type="module">
-        import { fetchPrices, formatPrice } from './js/pricing.js';
-
-        async function initPricing() {
-            const prices = await fetchPrices();
-            const priceElement = document.querySelector('.product-price');
-            const sku = document.querySelector('[data-sku]').getAttribute('data-sku');
-
-            if (prices[sku]) {
-                priceElement.textContent = formatPrice(prices[sku]);
-            }
-
-            // view_item event
-            if (typeof gtag === 'function') {
-                gtag('event', 'view_item', {
-                    currency: 'EUR',
-                    value: prices[sku] || 0,
-                    items: [{
-                        item_id: sku,
-                        item_name: 'Nuclear Vision X'
-                    }]
-                });
-                console.log('[GA4] Event Tracked: view_item', sku);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', initPricing);
-    </script>
+    <script src="/nh5/js/scroll-animations.js" type="module"></script>
+    <script src="/nh5/js/product-init.js" type="module"></script>
 </body>
 
 </html>

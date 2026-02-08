@@ -4,60 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/dynamic-bg.css">
+    <link rel="stylesheet" href="/nh5/css/styles.css">
+    <link rel="stylesheet" href="/nh5/css/dynamic-bg.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700&display=swap"
         rel="stylesheet">
     <title>Biblioteca Nuclear | Blog & Archivos de Soberanía Digital</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/nh5/favicon.ico">
     <meta name="description"
         content="Accede a la Biblioteca Nuclear: Artículos sobre IA Local, Soberanía Digital y el ecosistema de Nuclear Hand 5. High Tech. High Life.">
 
     <!-- OpenGraph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nuclearhand.com/blog.html">
+    <meta property="og:url" content="https://nh5.nuclearhand.io/blog.html">
     <meta property="og:title" content="Biblioteca Nuclear | Blog de Nuclear Hand 5">
     <meta property="og:description"
         content="Explora nuestra biblioteca de archivos sobre amplificación humana y privacidad radical.">
-    <meta property="og:image" content="https://nuclearhand.com/images/backgrounds/nh_bg_hero_abstract.png">
+    <meta property="og:image" content="images/backgrounds/nh_bg_hero_abstract.png">
     <link rel="stylesheet" href="css/blog.css">
-    <style>
-        .blog-list {
-            display: grid;
-            gap: 32px;
-            margin-top: 40px;
-        }
-
-        .blog-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(0, 209, 255, 0.1);
-            padding: 32px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-        }
-
-        .blog-card:hover {
-            border-color: var(--primary);
-            background: rgba(0, 209, 255, 0.05);
-            transform: translateY(-5px);
-        }
-
-        .blog-card h2 {
-            margin-top: 0;
-            color: var(--primary);
-            font-family: Orbitron, sans-serif;
-            font-size: 1.5em;
-        }
-
-        .blog-card p {
-            color: var(--muted);
-            margin-bottom: 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -69,14 +34,15 @@
     <header class="site-header">
         <div class="container header-inner">
             <a href="index.html" class="logo-wrap" aria-label="Volver al inicio">
-                <img src="/images/logo.png" alt="Logo Nuclear Hand" class="logo">
+                <img src="/nh5/images/logo.png" alt="Logo Nuclear Hand" class="logo">
                 <span class="brand">NUCLEAR HAND</span>
             </a>
             <nav aria-label="Navegación principal">
                 <ul>
-                    <li><a href="index.html#locoshop">LocoShop</a></li>
-                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="index.html#manifiesto">Manifiesto</a></li>
+                    <li><a href="index.html#principios">Principios</a></li>
+                    <li><a href="index.html#locoshop">Productos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="index.html#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -85,9 +51,7 @@
 
     <main class="container">
         <section class="blog-content">
-            <h1
-                style="text-align: center; font-family: Orbitron, sans-serif; color: var(--primary); margin-bottom: 10px;">
-                BIBLIOTECA NUCLEAR</h1>
+            <h1>BIBLIOTECA NUCLEAR</h1>
             <p style="text-align: center; color: var(--muted); margin-bottom: 40px;">Archivos de soberanía digital y
                 amplificación humana.</p>
 
@@ -98,19 +62,28 @@
                     <p>Descubre por qué delegar tu inteligencia a la nube es un error estratégico y cómo la IA local
                         protege tu futuro.</p>
                 </a>
-                <!-- Future posts here -->
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div>© 2026 Nuclear Hand. Designed in Barcelona.</div>
-            <div style="margin-top:12px; font-size:0.8em; opacity:0.6;">High Tech. High Life.</div>
+            <div style="font-family: var(--font-tech); margin-bottom: 1rem; color: var(--text);">NUCLEAR HAND</div>
+            <div style="font-size: 0.9em; margin-bottom: 2rem;">
+                Tecnología Independiente. Diseñado con rigor en Barcelona.
+            </div>
+            <div style="display: flex; justify-content: center; gap: 20px; font-size: 0.85em;">
+                <a href="privacy.html">Privacidad</a>
+                <a href="terms.html">Términos</a>
+                <a href="index.html#contacto">Soporte</a>
+            </div>
+            <div style="margin-top: 3rem; font-size: 0.75em; opacity: 0.5;">
+                © 2026 NUCLEAR HAND. TODOS LOS DERECHOS RESERVADOS.
+            </div>
         </div>
     </footer>
 
-    <script src="js/scroll-animations.js" type="module"></script>
+    <script src="./js/scroll-animations.js" type="module"></script>
 </body>
 
 </html>

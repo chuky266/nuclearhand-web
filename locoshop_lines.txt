@@ -1,0 +1,11 @@
+﻿          <li><a href="index.html#locoshop">LocoShop</a></li>
+          <a class="btn" href="#locoshop">Explorar el Futuro</a>
+  <section id="locoshop" class="section">
+      <h2>LocoShop</h2>
+      <!-- LOCOSHOP HERO -->
+      <div class="locoshop-hero-block scroll-reveal">
+        <img src="assets/locoshop/vision-x-hero.png" alt="Nuclear Vision X - El futuro de la reality aumentada"
+          class="locoshop-hero-img">
+        <div class="locoshop-hero-overlay">
+            <img src="assets/locoshop/vision-x-card.png"
+            <img src="assets/locoshop/band-x-card.png"

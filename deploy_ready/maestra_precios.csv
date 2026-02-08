@@ -1,0 +1,5 @@
+SKU;Producto;Proveedor;URL;Coste_Producto;Coste_Envio;Coste_Extra;Comision_Pasarela_pct;Comision_Pasarela_fija;IVA_pct;PVP;Ingreso_sin_IVA;Coste_Total;Fee_Pasarela;Beneficio;Margen_pct;Ad_Max;BE_ROAS;Semaforo
+NH-VX-001;Nuclear Vision X;GENERICO;https://example.com;220;18;5;0,029;0,35;0,21;399;329,75;;;;;;
+NH-NBX-001;NuclearBand X;GNERICO;https://example.com;65;8;2;0,029;0,35;0,21;149;123,14;;;;;;
+NH-AH-001;Nuclear AudioPods X;GENERICO;https://example.com;28;4;1;0,029;0,35;0,21;79;65,29;;;;;;
+NH-CH-001;Nuclear ChargeDock X;GENERICO;https://example.com;12;3;0,5;0,029;0,35;0,21;39;32,23;;;;;;

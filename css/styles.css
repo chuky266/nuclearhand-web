@@ -264,6 +264,7 @@ nav a:focus {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(12, 1fr);
+  counter-reset: card-index;
 }
 
 .card {
@@ -279,6 +280,20 @@ nav a:focus {
   flex-direction: column;
   height: 100%;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  counter-increment: card-index;
+}
+
+#locoshop .card::before {
+  content: counter(card-index, decimal-leading-zero) ".";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: Orbitron, sans-serif;
+  font-size: 0.8em;
+  color: var(--primary);
+  opacity: 0.5;
+  letter-spacing: 2px;
 }
 
 .nh-card-glass {

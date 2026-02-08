@@ -1,0 +1,2 @@
+async function l(){try{const n=(await(await fetch("/prices.csv")).text()).split(`
+`),i={};for(let e=1;e<n.length;e++){const s=n[e].trim();if(!s)continue;const r=s.split(";");if(r.length<11)continue;const a=r[0].trim().toUpperCase();let c=r[10].trim();c=c.replace(/\./g,"").replace(",",".");const o=parseFloat(c);isNaN(o)||(i[a]=o)}return i}catch(t){return console.error("Error fetching prices:",t),{}}}function m(t){return new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR",minimumFractionDigits:2,maximumFractionDigits:2}).format(t)}export{m as a,l as f};
