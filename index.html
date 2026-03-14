@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="/nh5/css/styles.css">
-  <link rel="stylesheet" href="/nh5/css/dynamic-bg.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/dynamic-bg.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700&display=swap"
@@ -13,22 +13,23 @@
   <title>Nuclear Hand 5 Alpha | IA Local Privada & Estética Cyberpunk</title>
   <meta name="description"
     content="Descubre Nuclear Hand 5: Wearables de IA local radicalmente privada. Nuclear Vision X y NuclearBand X diseñados para ampliar tu realidad con control total.">
+  <link rel="canonical" href="https://nh5.nuclearhand.io/" />
 
   <!-- OpenGraph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nuclearhand.com">
+  <meta property="og:url" content="https://nh5.nuclearhand.io/">
   <meta property="og:title" content="Nuclear Hand 5 | IA Local & Privacidad Radical">
   <meta property="og:description"
     content="Bienvenidos a la Alpha de Nuclear Hand 5. Wearables con IA local privada y diseño Cyberpunk. Toma el control de tu información.">
-  <meta property="og:image" content="https://nuclearhand.com/images/backgrounds/nh_bg_hero_abstract.png">
+  <meta property="og:image" content="https://nh5.nuclearhand.io/nh5/images/backgrounds/nh_bg_hero_abstract.png">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://nuclearhand.com">
+  <meta name="twitter:url" content="https://nh5.nuclearhand.io/">
   <meta name="twitter:title" content="Nuclear Hand 5 | IA Local & Privacidad Radical">
   <meta name="twitter:description"
     content="Descubre la Alpha de Nuclear Hand 5. Wearables de IA local privada. Nuclear Vision X y NuclearBand X.">
-  <meta name="twitter:image" content="https://nuclearhand.com/images/backgrounds/nh_bg_hero_abstract.png">
+  <meta name="twitter:image" content="https://nh5.nuclearhand.io/nh5/images/backgrounds/nh_bg_hero_abstract.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/nh5/favicon.ico">
@@ -44,7 +45,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo-wrap" aria-label="Volver al inicio">
-        <img src="/nh5/images/logo.png" alt="Logo Nuclear Hand" class="logo">
+        <img src="./images/logo.png" alt="Logo Nuclear Hand" class="logo">
         <span class="brand">NUCLEAR HAND</span>
       </a>
       <nav aria-label="Navegación principal">
@@ -59,13 +60,15 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
+    <div class="container scroll-reveal">
       <div class="hero-box">
+        <span class="tagline">OPERATING SYSTEM FOR NEURAL UPGRADE</span>
         <h1>EL FUTURO NO SE ESPERA, SE PROGRAMA.</h1>
-        <p>Inteligencia que amplifica tus capacidades, no que las sustituye. Tecnología invisible para la vida real.</p>
+        <p>Ampliamos las capacidades biológicas mediante inteligencia local radicalmente privada. No son dispositivos,
+          son tus nuevos sentidos.</p>
         <div class="hero-btns">
-          <a class="btn" href="#locoshop">Explorar el Futuro</a>
-          <a class="btn secondary" href="#manifiesto">Manifiesto</a>
+          <a class="btn" href="#locoshop">Explorar Ecosistema</a>
+          <a class="btn secondary" href="#manifiesto">Manifiesto Nuclear</a>
         </div>
       </div>
     </div>
@@ -146,23 +149,29 @@
   <!-- PRODUCTOS DESTACADOS -->
   <section id="locoshop" class="section">
     <div class="container">
-      <h2>LocoShop</h2>
+      <div style="text-align: center; margin-bottom: 50px;">
+        <h2 style="font-size: 3em; margin-bottom: 10px;">LocoShop</h2>
+        <p
+          style="color: var(--primary); font-family: 'Orbitron', sans-serif; letter-spacing: 4px; font-size: 0.9em; text-transform: uppercase;">
+          Hardware de Grado Alpha</p>
+      </div>
 
       <!-- LOCOSHOP HERO -->
       <div class="locoshop-hero-block scroll-reveal">
-        <img src="/nh5/assets/locoshop/vision-x-hero.png?v=1"
-          alt="Nuclear Vision X - El futuro de la realidad aumentada" class="locoshop-hero-img">
+        <img src="./assets/locoshop/vision-x-hero.png" alt="Nuclear Vision X - El futuro de la realidad aumentada"
+          class="locoshop-hero-img">
         <div class="locoshop-hero-overlay">
-          <span class="tagline">TECNOLOGÍA ALPHA FLAGSHIP</span>
+          <span class="tagline">FLAGSHIP PRE-RELEASE</span>
           <h3>Nuclear Vision X</h3>
-          <p>Realidad aumentada de alta precisión. Disponibilidad limitada.</p>
+          <p>La primera interfaz neuronal óptica comercial. Disponibilidad bajo invitación.</p>
+          <a href="nuclear-vision-x.html" class="btn" style="margin-top: 15px;">Ver Detalles</a>
         </div>
       </div>
 
       <div class="grid">
         <article class="card nh-card-glass scroll-reveal" data-sku="NH-VX-001">
           <div class="card-image">
-            <img src="/nh5/assets/locoshop/vision-x-card.png?v=1"
+            <img src="./assets/locoshop/vision-x-card.png"
               alt="Gafas inteligentes Nuclear Vision X - Realidad Aumentada de Alta Precisión" loading="lazy">
           </div>
           <span class="badge">Flagship Premium</span>
@@ -178,7 +187,7 @@
         </article>
         <article class="card nh-card-glass scroll-reveal" data-sku="NH-NBX-001">
           <div class="card-image">
-            <img src="/nh5/assets/locoshop/band-x-card.png?v=1"
+            <img src="./assets/locoshop/band-x-card.png"
               alt="Reloj inteligente NuclearBand X - Tinta Electrónica Proactiva" loading="lazy" width="800"
               height="450">
           </div>
@@ -195,7 +204,7 @@
         </article>
         <article class="card nh-card-glass scroll-reveal" data-sku="NH-LV-001">
           <div class="card-image">
-            <img src="/nh5/images/products/comingsoon.png" alt="Anillo inteligente Nuclear Ring - Próximamente"
+            <img src="./images/products/comingsoon.png" alt="Anillo inteligente Nuclear Ring - Próximamente"
               loading="lazy">
           </div>
           <span class="badge" style="color:var(--muted)">Alpha Preview</span>
@@ -209,6 +218,86 @@
             style="display:inline-block; margin-top:12px; color:var(--muted); font-size:0.9em;">Unirse a la
             Espera →</a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADN NUCLEAR (PREMIUM SECTION) -->
+  <section id="adn-nuclear" class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;" class="scroll-reveal">
+        <h2 style="font-size: 2.8em; margin-bottom: 12px;">Simbiosis Absoluta</h2>
+        <p
+          style="color: var(--muted); font-family: 'Orbitron', sans-serif; letter-spacing: 4px; font-size: 0.95em; text-transform: uppercase;">
+          EL ECOSISTEMA NUCLEAR</p>
+      </div>
+
+      <div class="grid">
+        <!-- Tarjeta 1: Visión -->
+        <article class="card adn-card scroll-reveal">
+          <div class="adn-icon">👁️‍🗨️</div>
+          <h3>Visión e Interfaz</h3>
+          <p>Interfaces neuronales ópticas que superponen datos críticos a tu realidad humana sin generar fatiga visual
+            ni fricción cognitiva.</p>
+        </article>
+        <!-- Tarjeta 2: Biomecánica -->
+        <article class="card adn-card scroll-reveal">
+          <div class="adn-icon">🦾</div>
+          <h3>Biomecánica Aplicada</h3>
+          <p>Extendemos los límites físicos mediante hardware invisible, sensores biométricos proactivos y acabados en
+            titanio aeroespacial.</p>
+        </article>
+        <!-- Tarjeta 3: Ecosistema -->
+        <article class="card adn-card scroll-reveal">
+          <div class="adn-icon">⚡</div>
+          <h3>Arquitectura Neural</h3>
+          <p>Tus dispositivos operan como una inteligencia en colmena. Datos procesados 100% en local garantizando
+            privacidad absoluta.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGÍA NUCLEAR HAND -->
+  <section id="tecnologia" class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;" class="scroll-reveal">
+        <h2 style="font-size: 3em; margin-bottom: 10px;">Tecnología Nuclear Hand</h2>
+        <p
+          style="color: var(--primary); font-family: 'Orbitron', sans-serif; letter-spacing: 2px; font-size: 0.9em; text-transform: uppercase;">
+          INTERFACES HUMANAS AVANZADAS DISEÑADAS PARA EL FUTURO.</p>
+      </div>
+
+      <div class="tech-container">
+        <!-- Bloque 1: Neural Vision -->
+        <div class="tech-card scroll-reveal">
+          <div class="tech-header">
+            <span class="tech-number">01</span>
+            <h3>Neural Vision Interface</h3>
+          </div>
+          <p>Sistema óptico inteligente que amplifica la percepción visual mediante sensores, procesamiento local y
+            capas de realidad aumentada.</p>
+        </div>
+
+        <!-- Bloque 2: Bio-Signal -->
+        <div class="tech-card scroll-reveal">
+          <div class="tech-header">
+            <span class="tech-number">02</span>
+            <h3>Bio-Signal Processing</h3>
+          </div>
+          <p>Sensores biométricos capaces de interpretar señales del cuerpo para optimizar interacción humano-máquina.
+          </p>
+        </div>
+
+        <!-- Bloque 3: Edge Intelligence -->
+        <div class="tech-card scroll-reveal">
+          <div class="tech-header">
+            <span class="tech-number">03</span>
+            <h3>Autonomous Edge Intelligence</h3>
+          </div>
+          <p>Procesamiento local en el dispositivo que elimina dependencia de servidores externos y mejora privacidad.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -315,8 +404,8 @@
     </div>
   </footer>
   <!-- PRICING & LOGIC LOADER -->
-  <script src="/nh5/js/scroll-animations.js" type="module"></script>
-  <script src="/nh5/js/index-init.js" type="module"></script>
+  <script src="./js/scroll-animations.js" type="module"></script>
+  <script src="./js/index-init.js" type="module"></script>
 </body>
 
 </html>
