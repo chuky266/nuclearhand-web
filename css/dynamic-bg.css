@@ -10,13 +10,13 @@
 
 .bg-grid {
     background:
-        radial-gradient(60vmax 60vmax at 12% 20%, rgba(17, 160, 255, .18), transparent 60%),
-        radial-gradient(50vmax 50vmax at 88% 15%, rgba(242, 255, 0, .10), transparent 60%),
-        radial-gradient(40vmax 40vmax at 35% 90%, rgba(17, 160, 255, .10), transparent 60%),
-        repeating-linear-gradient(90deg, transparent 0 28px, rgba(255, 255, 255, .06) 28px 29px),
-        repeating-linear-gradient(0deg, transparent 0 28px, rgba(255, 255, 255, .06) 28px 29px),
-        linear-gradient(180deg, #071020, #0b1220 45%, #0b1220 65%, #081121);
-    animation: gridMove 22s linear infinite;
+        radial-gradient(80vmax 80vmax at 10% 20%, rgba(0, 242, 255, 0.15), transparent 70%),
+        radial-gradient(60vmax 60vmax at 90% 10%, rgba(112, 250, 255, 0.10), transparent 60%),
+        radial-gradient(50vmax 50vmax at 50% 90%, rgba(0, 242, 255, 0.08), transparent 70%),
+        repeating-linear-gradient(90deg, transparent 0 40px, rgba(0, 242, 255, 0.03) 40px 41px),
+        repeating-linear-gradient(0deg, transparent 0 40px, rgba(0, 242, 255, 0.03) 40px 41px),
+        linear-gradient(180deg, #050a14, #0a1128 50%, #050a14);
+    animation: gridMove 30s linear infinite;
 }
 
 @keyframes gridMove {

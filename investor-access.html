@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/dynamic-bg.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700&display=swap"
+        rel="stylesheet">
+    <title>Investor Access | Nuclear Hand</title>
+    <meta name="description" content="Acceso temprano al ecosistema tecnológico Nuclear Hand para inversores.">
+    <link rel="canonical" href="https://nh5.nuclearhand.io/investor-access.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/nh5/favicon.ico">
+
+    <style>
+        .investor-hero {
+            text-align: center;
+            padding: 120px 20px 50px;
+        }
+
+        .investor-hero h1 {
+            font-size: 3.5vw;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .investor-hero .tagline {
+            font-size: 1.4em;
+            color: var(--primary);
+            font-family: Orbitron, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .investor-hero .hero-desc {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.15em;
+            color: var(--text);
+        }
+
+        @media (max-width: 768px) {
+            .investor-hero h1 {
+                font-size: 2.2em;
+            }
+
+            .investor-hero .tagline {
+                font-size: 1.1em;
+            }
+        }
+
+        .status-band {
+            background: rgba(0, 209, 255, 0.05);
+            border-top: 1px solid rgba(0, 209, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 209, 255, 0.2);
+            padding: 40px 20px;
+            margin: 40px 0 60px;
+        }
+
+        .status-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: Orbitron, sans-serif;
+            font-size: 1.1em;
+            color: #fff;
+        }
+
+        .status-check {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .investor-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 209, 255, 0.2);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-family: Orbitron, sans-serif;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(0, 209, 255, 0.03);
+            border: 1px solid rgba(0, 209, 255, 0.3);
+            border-radius: 6px;
+            color: #fff;
+            font-family: Inter, sans-serif;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 209, 255, 0.2);
+            background: rgba(0, 209, 255, 0.08);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .quote-text-center {
+            font-size: 2.2vw;
+            text-transform: uppercase;
+            margin-top: 60px;
+            color: #fff;
+            text-shadow: 0 0 25px rgba(0, 209, 255, 0.6);
+            letter-spacing: 2px;
+            font-family: Orbitron, sans-serif;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .quote-text-center {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dynamic Background Layers -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-rays" aria-hidden="true"></div>
+    <div class="bg-particles" aria-hidden="true"></div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo-wrap" aria-label="Volver al inicio">
+                <img src="./images/logo.png" alt="Logo Nuclear Hand" class="logo">
+                <span class="brand">NUCLEAR HAND</span>
+            </a>
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html#locoshop">LocoShop</a></li>
+                    <li><a href="tecnologia.html">Tecnología</a></li>
+                    <li><a href="manifiesto.html">Manifiesto</a></li>
+                    <li><a href="investor-access.html">Investors</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO INVESTOR ACCESS -->
+    <section class="investor-hero">
+        <div class="container scroll-reveal">
+            <h1>Investor Access</h1>
+            <p class="tagline">Acceso temprano al ecosistema tecnológico Nuclear Hand.</p>
+            <p class="hero-desc">
+                Nuclear Hand desarrolla una nueva generación de interfaces humanas avanzadas, hardware inteligente y
+                arquitectura de interacción local-first.
+            </p>
+        </div>
+    </section>
+
+    <!-- POR QUÉ NUCLEAR HAND (3 BLOQUES) -->
+    <section class="section" style="padding-top: 20px;">
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom: 50px;" class="scroll-reveal">Por qué Nuclear Hand</h2>
+            <div class="grid">
+                <article class="card adn-card scroll-reveal">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3em;">Human Interface Platform
+                    </h3>
+                    <p>Una nueva categoría de productos entre hardware, percepción y software local.</p>
+                </article>
+                <article class="card adn-card scroll-reveal">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3em;">Privacy-First Architecture
+                    </h3>
+                    <p>Procesamiento local, baja latencia y control absoluto del usuario desde el propio dispositivo.
+                    </p>
+                </article>
+                <article class="card adn-card scroll-reveal">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3em;">Scalable Brand Vision</h3>
+                    <p>Marca preparada para evolucionar radicalmente en producto, tecnología y ecosistema extendido.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTADO DEL PROYECTO -->
+    <section class="status-band scroll-reveal">
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom: 30px; font-size: 1.5em;">Estado del Proyecto</h2>
+            <ul class="status-list">
+                <li class="status-item"><span class="status-check">✓</span> Home validada</li>
+                <li class="status-item"><span class="status-check">✓</span> Página de producto creada</li>
+                <li class="status-item"><span class="status-check">✓</span> Manifiesto creado</li>
+                <li class="status-item"><span class="status-check">✓</span> Página de Tecnología creada</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FORMULARIO BASE -->
+    <section class="section">
+        <div class="container scroll-reveal">
+            <div class="investor-form-container">
+                <h2 style="text-align:center; margin-bottom: 30px;">Solicitud de Acceso</h2>
+                <form action="#" method="get"
+                    onsubmit="event.preventDefault(); alert('Formulario en modo visual. Conexión deshabilitada por seguridad.');">
+                    <div class="form-group">
+                        <label for="inv-name">Nombre</label>
+                        <input type="text" id="inv-name" class="form-control" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inv-email">Email</label>
+                        <input type="email" id="inv-email" class="form-control" placeholder="nombre@empresa.com"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inv-company">Empresa / Fondo</label>
+                        <input type="text" id="inv-company" class="form-control" placeholder="Nombre de tu organización"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inv-interest">Interés principal</label>
+                        <input type="text" id="inv-interest" class="form-control"
+                            placeholder="Por ej: Seed, Series A, Strategic Partnership" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inv-message">Mensaje</label>
+                        <textarea id="inv-message" class="form-control"
+                            placeholder="Breve introducción y motivos de contacto..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Solicitar
+                        acceso</button>
+                </form>
+            </div>
+
+            <!-- Cierre -->
+            <h2 class="quote-text-center">"The future is built by those who see it early."</h2>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="margin-bottom: 20px;">
+                <div class="footer-socials"
+                    style="display: flex; justify-content: center; gap: 20px; font-family: Orbitron, sans-serif; font-size: 0.8em; letter-spacing: 1px;">
+                    <a href="https://www.linkedin.com/company/nuclearhand" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--primary);" aria-label="LinkedIn">LINKEDIN</a>
+                    <a href="https://www.instagram.com/nuclearhand31" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--primary);" aria-label="Instagram">INSTAGRAM</a>
+                    <a href="https://www.tiktok.com/@nuclearhand1" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--primary);" aria-label="TikTok">TIKTOK</a>
+                    <a href="https://www.youtube.com/@NuclearHand-f9d5g" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--primary);" aria-label="YouTube">YOUTUBE</a>
+                </div>
+            </div>
+            <div>© 2026 Nuclear Hand. Designed in Barcelona.</div>
+            <div style="margin-top:8px; font-size:0.9em;">
+                <a href="privacy.html" style="margin:0 8px;">Privacidad Radical</a> ·
+                <a href="terms.html" style="margin:0 8px;">Términos</a> ·
+                <a href="manifiesto.html" style="margin:0 8px;">Manifiesto</a> ·
+                <a href="index.html#contacto" style="margin:0 8px;">Soporte</a>
+            </div>
+            <div style="margin-top:12px; font-size:0.8em; opacity:0.6;">Control total. Sin fricción.</div>
+        </div>
+    </footer>
+
+    <script src="./js/scroll-animations.js" type="module"></script>
+</body>
+
+</html>

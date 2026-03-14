@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/dynamic-bg.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700&display=swap"
+        rel="stylesheet">
+    <title>Manifiesto | Nuclear Hand</title>
+    <meta name="description"
+        content="Manifiesto Nuclear Hand. La tecnología ya no es una herramienta. Es una extensión del ser humano.">
+    <link rel="canonical" href="https://nh5.nuclearhand.io/manifiesto.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/nh5/favicon.ico">
+
+    <style>
+        .manifesto-hero {
+            text-align: center;
+            padding: 120px 20px 60px;
+        }
+
+        .manifesto-hero h1 {
+            font-size: 3.5vw;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .manifesto-hero .tagline {
+            font-size: 1.4em;
+            color: var(--primary);
+            font-family: Orbitron, sans-serif;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .manifesto-hero h1 {
+                font-size: 2.2em;
+            }
+
+            .manifesto-hero .tagline {
+                font-size: 1.1em;
+            }
+        }
+
+        .tech-quote-box {
+            background: linear-gradient(135deg, rgba(0, 209, 255, 0.08), rgba(0, 0, 0, 0.8));
+            border: 1px solid rgba(0, 209, 255, 0.2);
+            border-radius: 12px;
+            padding: 100px 40px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 2.8vw;
+            text-transform: uppercase;
+            margin-bottom: 0;
+            color: #fff;
+            text-shadow: 0 0 25px rgba(0, 209, 255, 0.6);
+            letter-spacing: 2px;
+            font-family: Orbitron, sans-serif;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .quote-text {
+                font-size: 1.8em;
+            }
+
+            .tech-quote-box {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dynamic Background Layers -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-rays" aria-hidden="true"></div>
+    <div class="bg-particles" aria-hidden="true"></div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo-wrap" aria-label="Volver al inicio">
+                <img src="./images/logo.png" alt="Logo Nuclear Hand" class="logo">
+                <span class="brand">NUCLEAR HAND</span>
+            </a>
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html#locoshop">LocoShop</a></li>
+                    <li><a href="tecnologia.html">Tecnología</a></li>
+                    <li><a href="manifiesto.html">Manifiesto</a></li>
+                    <li><a href="investor-access.html">Investors</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO MANIFIESTO -->
+    <section class="manifesto-hero">
+        <div class="container scroll-reveal">
+            <h1>MANIFIESTO NUCLEAR HAND</h1>
+            <p class="tagline">La tecnología ya no es una herramienta.<br>Es una extensión del ser humano.</p>
+        </div>
+    </section>
+
+    <!-- LA NUEVA INTERFAZ -->
+    <section class="section" style="padding-top: 0; text-align: center;">
+        <div class="container scroll-reveal">
+            <h2 style="margin-bottom: 30px;">La Nueva Interfaz</h2>
+            <p style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.15em; color: var(--text);">
+                El futuro de la tecnología pasa por la integración directa entre humanos y sistemas inteligentes.
+                Rechazamos la dependencia de abstracciones obsoletas y priorizamos métodos donde el procesamiento
+                local complemente de forma simbiótica nuestros sentidos.
+            </p>
+        </div>
+    </section>
+
+    <!-- FILOSOFÍA NUCLEAR HAND (3 BLOQUES) -->
+    <section class="section" style="padding-top: 20px;">
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom: 50px;" class="scroll-reveal">Filosofía Nuclear Hand</h2>
+            <div class="grid">
+                <article class="card adn-card scroll-reveal">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.4em;">Evolución humana aumentada
+                    </h3>
+                    <p>Tecnología diseñada para amplificar capacidades humanas en lugar de reemplazarlas.</p>
+                </article>
+                <article class="card adn-card scroll-reveal">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.4em;">Inteligencia local y
+                        privacidad</h3>
+                    <p>Procesamiento en el dispositivo sin depender de la nube. Radicalmente privado, ininterrumpido y
+                        seguro.</p>
+                </article>
+                <article class="card adn-card scroll-reveal">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.4em;">Hardware invisible</h3>
+                    <p>Dispositivos integrados de forma natural en la vida diaria. Menos fricción, máximo impacto.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN VISUAL CIERRE -->
+    <section class="section" style="padding: 60px 0 100px;">
+        <div class="container scroll-reveal">
+            <div class="tech-quote-box">
+                <!-- Decoración geométrica sutil -->
+                <div class="tech-line" style="top: 15%; left: -20%;"></div>
+                <div class="tech-line"
+                    style="bottom: 15%; right: -20%; background: linear-gradient(90deg, transparent, rgba(109, 243, 255, 0.4), transparent);">
+                </div>
+
+                <h2 class="quote-text">"El futuro no se espera.<br>Se construye."</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="margin-bottom: 20px;">
+                <div class="footer-socials"
+                    style="display: flex; justify-content: center; gap: 20px; font-family: Orbitron, sans-serif; font-size: 0.8em; letter-spacing: 1px;">
+                    <a href="https://www.linkedin.com/company/nuclearhand" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--primary);" aria-label="LinkedIn">LINKEDIN</a>
+                    <a href="https://www.instagram.com/nuclearhand31" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--primary);" aria-label="Instagram">INSTAGRAM</a>
+                    <a href="https://www.tiktok.com/@nuclearhand1" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--primary);" aria-label="TikTok">TIKTOK</a>
+                    <a href="https://www.youtube.com/@NuclearHand-f9d5g" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--primary);" aria-label="YouTube">YOUTUBE</a>
+                </div>
+            </div>
+            <div>© 2026 Nuclear Hand. Designed in Barcelona.</div>
+            <div style="margin-top:8px; font-size:0.9em;">
+                <a href="privacy.html" style="margin:0 8px;">Privacidad Radical</a> ·
+                <a href="terms.html" style="margin:0 8px;">Términos</a> ·
+                <a href="manifiesto.html" style="margin:0 8px;">Manifiesto</a> ·
+                <a href="index.html#contacto" style="margin:0 8px;">Soporte</a>
+            </div>
+            <div style="margin-top:12px; font-size:0.8em; opacity:0.6;">Control total. Sin fricción.</div>
+        </div>
+    </footer>
+
+    <script src="./js/scroll-animations.js" type="module"></script>
+</body>
+
+</html>

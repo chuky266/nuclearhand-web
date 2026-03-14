@@ -1,0 +1,299 @@
+{
+"$schema": "http://json-schema.org/draft-07/schema#",
+"title": "DataSchema_v2_1",
+"description": "Esquema JSON actualizado para eliminar advertencias de métricas (WARN) y endurecer la trazabilidad en la auditoría INV2025.",
+"type": "object",
+"properties": {
+"timestamp": {
+"type": "string",
+"format": "date-time",
+"description": "Fecha y hora de ejecución del evento (ISO 8601).",
+"examples": [
+"2025-12-01T10:00:00Z"
+]
+},
+"event_id": {
+"type": "string",
+"description": "Identificador único de la transacción.",
+"examples": [
+"EVT-1016"
+]
+},
+"run_id": {
+"type": "string",
+"description": "Identificador de la instancia general de ejecución.",
+"examples": [
+"RUN-A15"
+]
+},
+"trace_id": {
+"type": "string",
+"description": "Identificador de trazabilidad del proceso continuo.",
+"examples": [
+"TRC-016"
+]
+},
+"notebook_id": {
+"type": "string",
+"description": "Identificador del cuaderno asociado al evento.",
+"examples": [
+"Notebook 1"
+]
+},
+"tipo_registro": {
+"type": "string",
+"description": "Clasificación general del tipo de registro.",
+"examples": [
+"inversor"
+]
+},
+"modulo_canonico": {
+"type": "string",
+"enum": [
+"Pegasus_Vault",
+"Pegasus_Sentinel",
+"Pegasus_Echelon",
+"Pegasus_NeuralLink",
+"Pegasus_Mirror",
+"Pegasus_Omega",
+"Pegasus_QuantumCore",
+"Pegasus_Aurora",
+"Pegasus_Beacon",
+"AuditLog_V3"
+],
+"description": "Nombre canónico y normalizado del módulo del ecosistema.",
+"examples": [
+"Pegasus_QuantumCore"
+]
+},
+"artefacto": {
+"type": "string",
+"description": "Nombre del documento, reporte o elemento generado.",
+"examples": [
+"Dossier Ejecutivo de Inversión Final INV2025"
+]
+},
+"version": {
+"type": "string",
+"description": "Versión del artefacto o proceso.",
+"examples": [
+"v1.0"
+]
+},
+"accion": {
+"type": "string",
+"description": "Tipo de operación registrada.",
+"examples": [
+"Predicción"
+]
+},
+"responsable": {
+"type": "string",
+"description": "Entidad o usuario que ejecuta la acción.",
+"examples": [
+"Revisor/Auditor"
+]
+},
+"fuente_ref": {
+"type": "string",
+"description": "Nombre exacto de la fuente de origen en el ecosistema.",
+"examples": [
+"Activación Pegasus QuantumCore"
+]
+},
+"evidence_url": {
+"type": "string",
+"description": "Enlace a la evidencia física. Obligatorio si el contexto lo requiere, de lo contrario 'N/A'.",
+"examples": [
+"https://sys.nh/docs/report.pdf",
+"N/A"
+]
+},
+"hash_sha256": {
+"type": "string",
+"pattern": "^[a-f0-9]{64}$",
+"description": "Firma criptográfica resultante, obligatoriamente de 64 caracteres hexadecimales.",
+"examples": [
+"1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b"
+]
+},
+"estado": {
+"type": "string",
+"enum": [
+"OK",
+"WARN",
+"FAIL"
+],
+"description": "Estado resultante de la ejecución del evento.",
+"examples": [
+"OK"
+]
+},
+"observaciones": {
+"type": "string",
+"description": "Notas adicionales o justificaciones.",
+"examples": [
+"Validación cruzada exitosa con anexo matemático validado."
+]
+},
+"accuracy_score": {
+"type": "number",
+"minimum": 0,
+"maximum": 1,
+"description": "Porcentaje de exactitud del modelo (0 a 1).",
+"examples": [
+0.987
+]
+},
+"margin_of_error": {
+"type": "number",
+"minimum": 0,
+"maximum": 1,
+"description": "Margen de error de la proyección (0 a 1).",
+"examples": [
+0.013
+]
+},
+"accuracy_method": {
+"type": "string",
+"enum": [
+"backtest",
+"cross_validation",
+"live_monitoring"
+],
+"description": "Método de auditoría matemática empleado.",
+"examples": [
+"cross_validation"
+]
+},
+"dataset_id": {
+"type": "string",
+"description": "Identificador del conjunto de datos de prueba.",
+"examples": [
+"DS-INV2025-V1"
+]
+},
+"backtest_window": {
+"type": "string",
+"description": "Período temporal evaluado.",
+"examples": [
+"30d"
+]
+},
+"aprobado_por": {
+"type": "string",
+"description": "Firma del ejecutivo aprobador (opcional pero recomendado para INV2025).",
+"examples": [
+"Ejecutivo Nuclear Hand"
+]
+},
+"revisado_por": {
+"type": "string",
+"description": "Firma del revisor (opcional pero recomendado para INV2025).",
+"examples": [
+"Firma_Auditor_NH"
+]
+}
+},
+"required": [
+"timestamp",
+"event_id",
+"run_id",
+"trace_id",
+"notebook_id",
+"modulo_canonico",
+"artefacto",
+"version",
+"accion",
+"responsable",
+"hash_sha256",
+"estado"
+],
+"allOf": [
+{
+"if": {
+"anyOf": [
+{
+"properties": {
+"notebook_id": {
+"const": "Notebook 1"
+}
+}
+},
+{
+"properties": {
+"artefacto": {
+"pattern": "INV2025"
+}
+}
+},
+{
+"properties": {
+"tipo_registro": {
+"const": "inversor"
+}
+}
+}
+]
+},
+"then": {
+"properties": {
+"evidence_url": {
+"pattern": "^(?!N/A$).+$"
+}
+},
+"required": [
+"evidence_url"
+]
+}
+},
+{
+"if": {
+"properties": {
+"tipo_registro": {
+"const": "inversor"
+}
+}
+},
+"then": {
+"properties": {
+"responsable": {
+"enum": [
+"Revisor/Auditor",
+"Aprobador/Ejecutivo"
+]
+}
+}
+}
+},
+{
+"if": {
+"anyOf": [
+{
+"properties": {
+"modulo_canonico": {
+"const": "Pegasus_QuantumCore"
+}
+}
+},
+{
+"properties": {
+"accion": {
+"pattern": "(?i)validaci[oó]n"
+}
+}
+}
+]
+},
+"then": {
+"required": [
+"accuracy_score",
+"margin_of_error",
+"accuracy_method",
+"dataset_id",
+"backtest_window"
+]
+}
+}
+]
+}
