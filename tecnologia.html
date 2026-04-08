@@ -2,288 +2,198 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/dynamic-bg.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700&display=swap"
-        rel="stylesheet">
-    <title>Tecnología | Nuclear Hand</title>
-    <meta name="description"
-        content="Tecnología Nuclear Hand. Una nueva arquitectura para la interacción humano-máquina.">
-    <link rel="canonical" href="https://nh5.nuclearhand.io/tecnologia.html" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/nh5/favicon.ico">
-
-    <style>
-        .tech-hero {
-            text-align: center;
-            padding: 120px 20px 60px;
-        }
-
-        .tech-hero h1 {
-            font-size: 3.5vw;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .tech-hero .tagline {
-            font-size: 1.4em;
-            color: var(--primary);
-            font-family: Orbitron, sans-serif;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        @media (max-width: 768px) {
-            .tech-hero h1 {
-                font-size: 2.2em;
-            }
-
-            .tech-hero .tagline {
-                font-size: 1.1em;
-            }
-        }
-
-        .tech-quote-box {
-            background: linear-gradient(135deg, rgba(0, 209, 255, 0.08), rgba(0, 0, 0, 0.8));
-            border: 1px solid rgba(0, 209, 255, 0.2);
-            border-radius: 12px;
-            padding: 100px 40px;
-            overflow: hidden;
-            position: relative;
-            text-align: center;
-        }
-
-        .quote-text {
-            font-size: 2.8vw;
-            margin-bottom: 0;
-            color: #fff;
-            text-shadow: 0 0 25px rgba(0, 209, 255, 0.6);
-            letter-spacing: 2px;
-            font-family: Orbitron, sans-serif;
-            position: relative;
-            z-index: 2;
-        }
-
-        @media (max-width: 768px) {
-            .quote-text {
-                font-size: 1.8em;
-            }
-
-            .tech-quote-box {
-                padding: 60px 20px;
-            }
-        }
-
-        /* Diagrama CSS */
-        .architecture-diagram {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin: 60px auto;
-            max-width: 600px;
-        }
-
-        .diagram-layer {
-            background: rgba(0, 209, 255, 0.05);
-            border: 1px solid rgba(0, 209, 255, 0.3);
-            padding: 24px;
-            border-radius: 8px;
-            text-align: center;
-            position: relative;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .diagram-layer:hover {
-            background: rgba(0, 209, 255, 0.15);
-            border-color: rgba(0, 209, 255, 0.8);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 209, 255, 0.2);
-        }
-
-        .diagram-layer h4 {
-            margin: 0 0 5px 0;
-            color: #fff;
-            font-size: 1.3em;
-            font-family: Orbitron, sans-serif;
-            letter-spacing: 1px;
-        }
-
-        .diagram-layer p {
-            margin: 0;
-            font-size: 0.95em;
-            color: var(--muted);
-        }
-
-        .diagram-connector {
-            width: 2px;
-            height: 25px;
-            background: var(--primary);
-            margin: 0 auto;
-            opacity: 0.5;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/dynamic-bg.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700&display=swap"
+    rel="stylesheet">
+  <title>Tecnología | Nuclear Hand</title>
+  <meta name="description" content="Detalles técnicos de la arquitectura Nuclear Hand. IA local y hardware neuromórfico.">
+  <link rel="canonical" href="https://TU-DOMINIO-FINAL-AQUI/tecnologia.html" />
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://TU-DOMINIO-FINAL-AQUI/tecnologia.html">
+  <meta property="og:title" content="Tecnología | Nuclear Hand">
+  <meta property="og:description" content="Detalles técnicos de la arquitectura Nuclear Hand. IA local y hardware neuromórfico.">
+  <meta property="og:image" content="https://TU-DOMINIO-FINAL-AQUI/images/backgrounds/nh_bg_hero_abstract.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://TU-DOMINIO-FINAL-AQUI/tecnologia.html">
+  <meta name="twitter:title" content="TecnologÃ­a | Nuclear Hand">
+  <meta name="twitter:description" content="Detalles tÃ©cnicos de la arquitectura Nuclear Hand. IA local y hardware neuromÃ³rfico.">
+  <meta name="twitter:image" content="https://TU-DOMINIO-FINAL-AQUI/images/backgrounds/nh_bg_hero_abstract.png">
 </head>
 
 <body>
-    <!-- Dynamic Background Layers -->
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-rays" aria-hidden="true"></div>
-    <div class="bg-particles" aria-hidden="true"></div>
+  <!-- Dynamic Background Layers -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-rays" aria-hidden="true"></div>
+  <div class="bg-particles" aria-hidden="true"></div>
 
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <a href="index.html" class="logo-wrap" aria-label="Volver al inicio">
-                <img src="./images/logo.png" alt="Logo Nuclear Hand" class="logo">
-                <span class="brand">NUCLEAR HAND</span>
-            </a>
-            <nav aria-label="Navegación principal">
-                <ul>
-                    <li><a href="index.html#locoshop">LocoShop</a></li>
-                    <li><a href="tecnologia.html">Tecnología</a></li>
-                    <li><a href="manifiesto.html">Manifiesto</a></li>
-                    <li><a href="investor-access.html">Investors</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
-                </ul>
-            </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-wrap" aria-label="Volver al inicio">
+        <img src="./images/logo.png" alt="Logo Nuclear Hand" class="logo">
+        <span class="brand">NUCLEAR HAND</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html#locoshop">LocoShop</a></li>
+          <li><a href="tecnologia.html">Tecnología</a></li>
+          <li><a href="manifiesto.html">Manifiesto</a></li>
+          <li><a href="investor-access.html">Investors</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO TECNOLOGIA -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="status-band">TECH_SPEC: ARCHITECTURE_DRAFT_0.9</div>
+      <h1 style="font-family: var(--font-tech); font-weight: 700; text-transform: uppercase; letter-spacing: -1px;">INGENIERÍA <span style="color: var(--primary);">SIN LÍMITES.</span></h1>
+      <p class="tagline" style="margin-top: 20px; font-size: 1.2rem; opacity: 0.8;">Diseñamos la intersección real entre la biología humana y la potencia del silicio local.</p>
+    </div>
+  </section>
+
+  <!-- NÚCLEO DEL SISTEMA -->
+  <section class="section">
+    <div class="container scroll-reveal">
+      <div class="grid" style="align-items: center;">
+        <div class="col-half">
+          <h2 style="font-size: 2.5em; margin-bottom: 30px;">El Núcleo del <span style="color: var(--primary);">Sistema.</span></h2>
+          <p style="line-height: 1.8; font-size: 1.1em; color: var(--text); margin-bottom: 24px;">
+            Nuclear Hand funciona como un ecosistema tecnológico unificado de circuito cerrado. No dependemos de servidores externos ni latencias de red.
+          </p>
+          <div class="card tech-border tl br" style="background: rgba(0, 242, 255, 0.03);">
+            <p style="color: var(--muted); font-size: 0.95em;">Nuestras interfaces neuromórficas traducen señales biológicas directas en comandos digitales, permitiendo una interacción que se siente como un reflejo nativo.</p>
+          </div>
         </div>
-    </header>
-
-    <!-- HERO TECNOLOGIA -->
-    <section class="tech-hero">
-        <div class="container scroll-reveal">
-            <h1>Tecnología Nuclear Hand</h1>
-            <p class="tagline">Una nueva arquitectura para la interacción humano-máquina.</p>
+        <div class="col-half pad-left-large">
+           <div class="tech-border tl br" style="padding: 40px; text-align: center; background: radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, transparent 70%);">
+              <span class="badge">LOCAL_AI_CORE</span>
+              <div style="font-size: 0.8em; color: var(--muted); font-family: var(--font-tech); margin-top: 20px;">PROCESSING_POWER: ULTRA_LOW_LATENCY</div>
+              <div style="height: 150px; display: flex; align-items: center; justify-content: center;">
+                 <div style="width: 80px; height: 80px; border: 2px solid var(--primary); border-radius: 50%; box-shadow: 0 0 20px var(--primary-glow); animation: pulse 2s infinite;"></div>
+              </div>
+           </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- NÚCLEO DEL SISTEMA -->
-    <section class="section" style="padding-top: 0; text-align: center;">
-        <div class="container scroll-reveal">
-            <h2 style="margin-bottom: 30px;">Núcleo del Sistema</h2>
-            <p style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.15em; color: var(--text);">
-                Nuclear Hand funciona como un ecosistema tecnológico unificado: hardware especializado, interfaces
-                neuromórficas y procesamiento estrictamente local. Diseñado sin dependencias externas para garantizar
-                visibilidad cristalina y privacidad total en cada interacción del usuario.
-            </p>
+  <!-- ARQUITECTURA TECNOLÓGICA (4 BLOQUES) -->
+  <section class="section" style="background: rgba(0, 242, 255, 0.01); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <span class="badge">CAPAS DE SISTEMA</span>
+        <h2 style="font-size: 2.2em; margin-top: 10px;">Arquitectura <span style="color: var(--primary);">ADN</span></h2>
+      </div>
+      <div class="grid">
+        <article class="card tech-border tl">
+          <div style="color: var(--primary); font-size: 2em; margin-bottom: 20px;">👁️</div>
+          <h3>Optical Interface</h3>
+          <p>Motor de visión aumentada que superpone información digital sin fatiga óptica periférica.</p>
+        </article>
+        <article class="card tech-border tr">
+          <div style="color: var(--primary); font-size: 2em; margin-bottom: 20px;">🧠</div>
+          <h3>Neural Layer</h3>
+          <p>Traducción de impulsos y gestos en comandos dinámicos mediante redes neuronales locales.</p>
+        </article>
+        <article class="card tech-border bl">
+          <div style="color: var(--primary); font-size: 2em; margin-bottom: 20px;">🛡️</div>
+          <h3>Privacy Core</h3>
+          <p>Cifrado de grado militar on-device. La soberanía digital no es una opción, es la base.</p>
+        </article>
+        <article class="card tech-border br">
+          <div style="color: var(--primary); font-size: 2em; margin-bottom: 20px;">📡</div>
+          <h3>Sensor Fusion</h3>
+          <p>Integración masiva de datos biométricos y espaciales para una comprensión total del entorno.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN VISUAL (DIAGRAMA) -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-size: 2.2em;">Modelo <span style="color: var(--primary);">Operativo</span></h2>
+        <p style="color: var(--muted); letter-spacing: 2px; font-family: var(--font-tech); font-size: 0.8em; margin-top: 10px;">INDEPENDENT_SYSTEM_FLOW</p>
+      </div>
+      <div class="architecture-diagram" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0;">
+        <div class="card tech-border tl br" style="width: 100%; max-width: 400px; text-align: center; padding: 32px; background: rgba(0, 242, 255, 0.02);">
+          <span style="display: block; font-family: var(--font-tech); color: var(--primary); font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 12px;">SENSADO_ACTIVO</span>
+          <p style="font-size: 0.9rem; color: var(--muted);">Captura constante de biometría y profundidad espacial.</p>
         </div>
-    </section>
-
-    <!-- ARQUITECTURA TECNOLÓGICA (4 BLOQUES) -->
-    <section class="section" style="padding-top: 20px;">
-        <div class="container">
-            <h2 style="text-align:center; margin-bottom: 50px;" class="scroll-reveal">Arquitectura Tecnológica</h2>
-            <div class="grid">
-                <article class="card adn-card scroll-reveal">
-                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3em;">Optical Interface Engine
-                    </h3>
-                    <p>Motor de visión aumentada que superpone información digital en tiempo real sin fatiga óptica.</p>
-                </article>
-                <article class="card adn-card scroll-reveal">
-                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3em;">Neural Interaction Layer
-                    </h3>
-                    <p>Sistema de interacción que localiza y traduce señales humanas en comandos digitales dinámicos.
-                    </p>
-                </article>
-                <article class="card adn-card scroll-reveal">
-                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3em;">Local Intelligence Core
-                    </h3>
-                    <p>Procesamiento 100% on-device para máxima privacidad, seguridad de datos y bajísima latencia.</p>
-                </article>
-                <article class="card adn-card scroll-reveal">
-                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3em;">Sensor Fusion System</h3>
-                    <p>Integración de múltiples sensores telemétricos para comprender el entorno espacial y biométrico
-                        del usuario.</p>
-                </article>
-            </div>
+        <div class="diagram-connector" style="height: 40px; width: 2px; background: linear-gradient(180deg, var(--primary), transparent); opacity: 0.5;"></div>
+        <div class="card tech-border tr bl" style="width: 100%; max-width: 500px; text-align: center; padding: 40px; background: rgba(0, 242, 255, 0.05); border-color: var(--primary);">
+          <span style="display: block; font-family: var(--font-tech); color: var(--primary); font-size: 1.1em; margin-bottom: 12px;">NÚCLEO IA (LOCAL)</span>
+          <p style="font-size: 0.95rem; color: #fff;">Procesamiento de inferencia con latencia sub-ms.</p>
         </div>
-    </section>
-
-    <!-- SECCIÓN VISUAL (DIAGRAMA) -->
-    <section class="section" style="padding-top: 40px;">
-        <div class="container scroll-reveal">
-            <h2 style="text-align:center; margin-bottom: 40px;">Diagrama de Capas de Sistema</h2>
-            <div class="architecture-diagram">
-                <div class="diagram-layer">
-                    <h4>V. Optical Interface Engine</h4>
-                    <p>Lente AR y despliegue holográfico</p>
-                </div>
-                <div class="diagram-connector"></div>
-                <div class="diagram-layer">
-                    <h4>IV. Neural Interaction Layer</h4>
-                    <p>Reconocimiento de gestos e intención</p>
-                </div>
-                <div class="diagram-connector"></div>
-                <div class="diagram-layer">
-                    <h4>III. Local Intelligence Core</h4>
-                    <p>Procesamiento algorítmico y ejecución on-device</p>
-                </div>
-                <div class="diagram-connector"></div>
-                <div class="diagram-layer">
-                    <h4>II. Sensor Fusion System</h4>
-                    <p>Recopilación de señales visuales y biométricas</p>
-                </div>
-                <div class="diagram-connector"></div>
-                <div class="diagram-layer">
-                    <h4>I. Entorno Físico del Usuario</h4>
-                    <p>Interacción basal offline</p>
-                </div>
-            </div>
+        <div class="diagram-connector" style="height: 40px; width: 2px; background: linear-gradient(0deg, var(--primary), transparent); opacity: 0.5;"></div>
+        <div class="card tech-border tl br" style="width: 100%; max-width: 400px; text-align: center; padding: 32px; background: rgba(0, 242, 255, 0.02);">
+          <span style="display: block; font-family: var(--font-tech); color: var(--primary); font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 12px;">RESPUESTA_NATIVA</span>
+          <p style="font-size: 0.9rem; color: var(--muted);">Ejecución de interfaz sin intermediarios externos.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- SECCIÓN VISUAL CIERRE -->
-    <section class="section" style="padding: 60px 0 100px;">
-        <div class="container scroll-reveal">
-            <div class="tech-quote-box">
-                <!-- Decoración geométrica sutil -->
-                <div class="tech-line" style="top: 15%; left: -20%;"></div>
-                <div class="tech-line"
-                    style="bottom: 15%; right: -20%; background: linear-gradient(90deg, transparent, rgba(109, 243, 255, 0.4), transparent);">
-                </div>
+  <!-- SECCIÓN VISUAL CIERRE -->
+  <section class="section" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="accent-quote-box scroll-reveal">
+        <blockquote class="quote-text" style="font-size: clamp(1.5em, 4vw, 2.5em); line-height: 1.4;">
+          "La tecnología del futuro no será una herramienta visible; será un nuevo <span style="color: var(--primary);">sentido nativo</span>."
+        </blockquote>
+      </div>
+    </div>
+  </section>
 
-                <h2 class="quote-text" style="font-size: 2.2vw; line-height: 1.5; text-transform:none;">"La tecnología
-                    del futuro no será visible.<br>Simplemente funcionará."</h2>
-            </div>
+  <!-- CTA FINAL -->
+  <section class="section" style="padding-top: 40px; padding-bottom: 80px;">
+    <div class="container" style="text-align: center;">
+       <h2 style="font-size: 2.2em; margin-bottom: 20px;">Experimenta la <span style="color:var(--primary);">Verdadera Conexión.</span></h2>
+       <a href="investor-access.html#alpha-request" class="btn hero-cta" style="padding: 16px 36px; font-size: 1.05rem;">Solicitar Control Alpha</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div style="margin-bottom: 24px;">
+        <div class="footer-socials"
+          style="display: flex; justify-content: center; gap: 24px; font-family: Orbitron, sans-serif; font-size: 0.8em; letter-spacing: 2px;">
+          <a href="https://www.linkedin.com/company/nuclearhand" target="_blank" rel="noopener noreferrer"
+            style="color: var(--primary);" aria-label="LinkedIn">LINKEDIN</a>
+          <a href="https://www.instagram.com/nuclearhand31" target="_blank" rel="noopener noreferrer"
+            style="color: var(--primary);" aria-label="Instagram">INSTAGRAM</a>
+          <a href="https://www.tiktok.com/@nuclearhand1" target="_blank" rel="noopener noreferrer"
+            style="color: var(--primary);" aria-label="TikTok">TIKTOK</a>
+          <a href="https://www.youtube.com/@NuclearHand-f9d5g" target="_blank" rel="noopener noreferrer"
+            style="color: var(--primary);" aria-label="YouTube">YOUTUBE</a>
+          <a href="https://bitcrux.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary);" aria-label="Bitcrux">BITCRUX</a>
         </div>
-    </section>
+      </div>
+      <div style="color: #fff; font-weight: 600; margin-bottom: 12px; font-size: 0.85rem; letter-spacing: 1px;">© 2026 NUCLEAR HAND. DESIGNED IN BARCELONA.</div>
+      <div style="margin-top:12px; font-size:0.75rem; opacity:0.6; letter-spacing: 1px;">
+        <a href="privacy.html" style="margin:0 12px;">PRIVACIDAD RADICAL</a> ·
+        <a href="terms.html" style="margin:0 12px;">TÉRMINOS</a> ·
+        <a href="manifiesto.html" style="margin:0 12px;">MANIFIESTO</a> ·
+        <a href="mailto:info@nuclearhand.com" style="margin:0 12px;">SOPORTE</a>
+      </div>
+      <div style="margin-top:16px; font-size:0.75rem; letter-spacing: 2px; text-transform: uppercase;">
+        <span style="opacity:0.5;">Control total. Sin fricción.</span><br>
+        <span style="color: var(--primary); font-family: var(--font-tech); opacity: 0.8; margin-top: 8px; display: inline-block;">SECURITY RATING: MAXIMUM_ISO_27001_COMPLIANT</span>
+      </div>
+    </div>
+  </footer>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="container">
-            <div style="margin-bottom: 20px;">
-                <div class="footer-socials"
-                    style="display: flex; justify-content: center; gap: 20px; font-family: Orbitron, sans-serif; font-size: 0.8em; letter-spacing: 1px;">
-                    <a href="https://www.linkedin.com/company/nuclearhand" target="_blank" rel="noopener noreferrer"
-                        style="color: var(--primary);" aria-label="LinkedIn">LINKEDIN</a>
-                    <a href="https://www.instagram.com/nuclearhand31" target="_blank" rel="noopener noreferrer"
-                        style="color: var(--primary);" aria-label="Instagram">INSTAGRAM</a>
-                    <a href="https://www.tiktok.com/@nuclearhand1" target="_blank" rel="noopener noreferrer"
-                        style="color: var(--primary);" aria-label="TikTok">TIKTOK</a>
-                    <a href="https://www.youtube.com/@NuclearHand-f9d5g" target="_blank" rel="noopener noreferrer"
-                        style="color: var(--primary);" aria-label="YouTube">YOUTUBE</a>
-                </div>
-            </div>
-            <div>© 2026 Nuclear Hand. Designed in Barcelona.</div>
-            <div style="margin-top:8px; font-size:0.9em;">
-                <a href="privacy.html" style="margin:0 8px;">Privacidad Radical</a> ·
-                <a href="terms.html" style="margin:0 8px;">Términos</a> ·
-                <a href="manifiesto.html" style="margin:0 8px;">Manifiesto</a> ·
-                <a href="index.html#contacto" style="margin:0 8px;">Soporte</a>
-            </div>
-            <div style="margin-top:12px; font-size:0.8em; opacity:0.6;">Control total. Sin fricción.</div>
-        </div>
-    </footer>
-
-    <script src="./js/scroll-animations.js" type="module"></script>
+  <script src="./js/scroll-animations.js" type="module"></script>
 </body>
 
 </html>
