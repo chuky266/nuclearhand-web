@@ -34,6 +34,15 @@ export function initLeadCapture() {
     const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
 
+    // Captura segura del origen o producto para distinguir leads en n8n
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('product')) {
+        payload.targetProduct = urlParams.get('product');
+    }
+    if (document.referrer && !document.referrer.includes('investor-access')) {
+        payload.referrerPage = document.referrer;
+    }
+
     // Controller para timeout de prevención (15 segundos)
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 15000);

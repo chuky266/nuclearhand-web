@@ -34,16 +34,33 @@ function initContactForm() {
         const status = form.querySelector('.form-status');
         const submitBtn = form.querySelector('.form-submit');
         const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+        payload.interestType = 'general_contact'; // Identificador para n8n
+        payload.sourcePage = window.location.pathname;
+        payload.submittedAt = new Date().toISOString();
 
         submitBtn.disabled = true;
-        status.textContent = 'Enviando...';
+        status.textContent = 'Transmitiendo...';
         status.className = 'form-status';
 
+        const API_ENDPOINT = (window.NH_ENV && window.NH_ENV.WEBHOOK_URL) || 'https://nuclearhand.app.n8n.cloud/webhook/investor-intake';
+
         try {
-            // Simulación de envío
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            status.textContent = '¡Mensaje enviado con éxito! Nos contactaremos pronto.';
-            status.classList.add('success');
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+            const response = await fetch(API_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+                signal: controller.signal
+            });
+            clearTimeout(timeoutId);
+
+            if (!response.ok) throw new Error('Network error');
+
+            status.textContent = '⚡ TRANSMISIÓN COMPLETADA.';
+            status.style.color = '#00f2ff';
             form.reset();
 
             trackGAEvent('generate_lead', {
@@ -51,10 +68,11 @@ function initContactForm() {
                 location_id: 'footer'
             });
         } catch (err) {
-            status.textContent = 'Error al enviar. Inténtalo de nuevo.';
-            status.classList.add('error');
+            status.textContent = '⚠️ ERROR DE TRANSMISIÓN. REINTENTE.';
+            status.style.color = '#ff3366';
         } finally {
             submitBtn.disabled = false;
+            setTimeout(() => { if(status) status.textContent = ''; }, 6000);
         }
     });
 }
