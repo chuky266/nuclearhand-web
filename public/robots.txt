@@ -2,5 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://nuclearhand.online/sitemap.xml
-
-
