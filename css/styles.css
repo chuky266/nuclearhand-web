@@ -181,7 +181,7 @@ nav a:focus {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('../images/backgrounds/nh_bg_hero_abstract.png');
+  background-image: url('../images/backgrounds/nh_bg_hero_abstract.webp');
   background-size: cover;
   background-position: center;
   opacity: 0.4;
@@ -1697,4 +1697,4 @@ button:disabled {
 
 @keyframes spin {
   to { transform: rotate(360deg); }
-}
+}
