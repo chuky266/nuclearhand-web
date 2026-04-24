@@ -298,23 +298,23 @@
           <p style="color: var(--muted); margin-top: 10px;">¿Dudas sobre el despliegue Alpha? Estamos aquí para el soporte técnico y comercial.</p>
         </div>
 
-        <form action="#" class="nh-form">
+        <form action="#" class="nh-form" id="contactForm">
           <div class="grid">
             <div class="col-half">
-              <label style="display: block; font-family: var(--font-tech); font-size: 0.6rem; letter-spacing: 2px; margin-bottom: 8px; color: var(--primary);">USER_NAME</label>
-              <input type="text" name="name" placeholder="TU NOMBRE" style="width: 100%; padding: 14px; background: rgba(0,0,0,0.5); border: 1px solid var(--border); border-radius: 4px; color: #fff; font-family: var(--font-main);" required>
+              <label for="contact-name" style="display: block; font-family: var(--font-tech); font-size: 0.6rem; letter-spacing: 2px; margin-bottom: 8px; color: var(--primary);">USER_NAME</label>
+              <input id="contact-name" type="text" name="name" autocomplete="name" placeholder="TU NOMBRE" style="width: 100%; padding: 14px; background: rgba(0,0,0,0.5); border: 1px solid var(--border); border-radius: 4px; color: #fff; font-family: var(--font-main);" required>
             </div>
             <div class="col-half">
-              <label style="display: block; font-family: var(--font-tech); font-size: 0.6rem; letter-spacing: 2px; margin-bottom: 8px; color: var(--primary);">EMAIL_PROTOCOL</label>
-              <input type="email" name="email" placeholder="EMAIL@PROTOCOL.COM" style="width: 100%; padding: 14px; background: rgba(0,0,0,0.5); border: 1px solid var(--border); border-radius: 4px; color: #fff; font-family: var(--font-main);" required>
+              <label for="contact-email" style="display: block; font-family: var(--font-tech); font-size: 0.6rem; letter-spacing: 2px; margin-bottom: 8px; color: var(--primary);">EMAIL_PROTOCOL</label>
+              <input id="contact-email" type="email" name="email" autocomplete="email" placeholder="EMAIL@PROTOCOL.COM" style="width: 100%; padding: 14px; background: rgba(0,0,0,0.5); border: 1px solid var(--border); border-radius: 4px; color: #fff; font-family: var(--font-main);" required>
             </div>
           </div>
           <div style="margin-top: 24px;">
-            <label style="display: block; font-family: var(--font-tech); font-size: 0.6rem; letter-spacing: 2px; margin-bottom: 8px; color: var(--primary);">MESSAGE_STREAM</label>
-            <textarea name="message" rows="4" placeholder="¿CÓMO PODEMOS AMPLIAR TU REALIDAD?" style="width: 100%; padding: 14px; background: rgba(0,0,0,0.5); border: 1px solid var(--border); border-radius: 4px; color: #fff; resize: none; font-family: var(--font-main);" required></textarea>
+            <label for="contact-message" style="display: block; font-family: var(--font-tech); font-size: 0.6rem; letter-spacing: 2px; margin-bottom: 8px; color: var(--primary);">MESSAGE_STREAM</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="¿CÓMO PODEMOS AMPLIAR TU REALIDAD?" style="width: 100%; padding: 14px; background: rgba(0,0,0,0.5); border: 1px solid var(--border); border-radius: 4px; color: #fff; resize: none; font-family: var(--font-main);" required></textarea>
           </div>
           <button type="submit" class="btn hero-cta form-submit" style="width: 100%; margin-top: 32px;">TRANSMITIR MENSAJE</button>
-          <div class="form-status" style="margin-top: 15px; text-align: center; font-family: var(--font-tech); font-size: 0.8rem; color: var(--primary);"></div>
+          <div class="form-status" id="contact-form-status" aria-live="polite" style="margin-top: 15px; text-align: center; font-family: var(--font-tech); font-size: 0.8rem; color: var(--primary);"></div>
         </form>
       </div>
     </div>
