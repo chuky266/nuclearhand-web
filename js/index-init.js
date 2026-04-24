@@ -26,12 +26,12 @@ async function initPricing() {
 }
 
 function initContactForm() {
-    const form = document.querySelector('.nh-form');
+    const form = document.getElementById('contactForm') || document.querySelector('.nh-form');
     if (!form) return;
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const status = form.querySelector('.form-status');
+        const status = document.getElementById('contact-form-status') || form.querySelector('.form-status');
         const submitBtn = form.querySelector('.form-submit');
         const formData = new FormData(form);
         const payload = Object.fromEntries(formData.entries());
