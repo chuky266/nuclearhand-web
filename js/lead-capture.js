@@ -20,6 +20,7 @@ export function initLeadCapture() {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (!btn) return;
 
     // 1. Rellenar timestamp
     if (hiddenTime) hiddenTime.value = new Date().toISOString();
@@ -27,9 +28,16 @@ export function initLeadCapture() {
     // 2. UI: Transmisión iniciada
     btn.disabled = true;
     btn.innerHTML = `<span class="spinner"></span> Transmitiendo...`;
-    statusContainer.className = 'form-status-message';
-    statusContainer.style.cssText = '';
-    statusContainer.innerHTML = '';
+    if (statusContainer) {
+      statusContainer.className = 'form-status-message';
+      statusContainer.style.cssText = '';
+      statusContainer.innerHTML = '';
+    }
+    if (!statusContainer) {
+      btn.disabled = false;
+      btn.innerHTML = originalBtnText;
+      return;
+    }
 
     const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
