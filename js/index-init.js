@@ -33,6 +33,7 @@ function initContactForm() {
         e.preventDefault();
         const status = document.getElementById('contact-form-status') || form.querySelector('.form-status');
         const submitBtn = form.querySelector('.form-submit');
+        if (!submitBtn) return;
         const formData = new FormData(form);
         const payload = Object.fromEntries(formData.entries());
         payload.interestType = 'general_contact'; // Identificador para n8n
@@ -40,8 +41,10 @@ function initContactForm() {
         payload.submittedAt = new Date().toISOString();
 
         submitBtn.disabled = true;
-        status.textContent = 'Transmitiendo...';
-        status.className = 'form-status';
+        if (status) {
+            status.textContent = 'Transmitiendo...';
+            status.className = 'form-status';
+        }
 
         const API_ENDPOINT = (window.NH_ENV && window.NH_ENV.WEBHOOK_URL) || 'https://nuclearhand.app.n8n.cloud/webhook/investor-intake';
 
@@ -58,6 +61,15 @@ function initContactForm() {
             clearTimeout(timeoutId);
 
             if (!response.ok) throw new Error('Network error');
+            if (!status) {
+                form.reset();
+
+                trackGAEvent('generate_lead', {
+                    method: 'contact_form',
+                    location_id: 'footer'
+                });
+                return;
+            }
 
             status.textContent = '⚡ TRANSMISIÓN COMPLETADA.';
             status.style.color = '#00f2ff';
@@ -68,6 +80,7 @@ function initContactForm() {
                 location_id: 'footer'
             });
         } catch (err) {
+            if (!status) return;
             status.textContent = '⚠️ ERROR DE TRANSMISIÓN. REINTENTE.';
             status.style.color = '#ff3366';
         } finally {
