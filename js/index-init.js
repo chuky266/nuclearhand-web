@@ -1,5 +1,5 @@
 import { fetchPrices, formatPrice } from './pricing.js';
-import { NH_CONFIG } from './config.js';
+import { createFormPayload, submitFormPayload } from './form-submit.js';
 
 // NH: GA4 Event Helpers
 function trackGAEvent(name, params) {
@@ -35,11 +35,11 @@ function initContactForm() {
         const status = document.getElementById('contact-form-status') || form.querySelector('.form-status');
         const submitBtn = form.querySelector('.form-submit');
         if (!submitBtn) return;
-        const formData = new FormData(form);
-        const payload = Object.fromEntries(formData.entries());
-        payload.interestType = 'general_contact'; // Identificador para n8n
-        payload.sourcePage = window.location.pathname;
-        payload.submittedAt = new Date().toISOString();
+        const payload = createFormPayload(form, {
+            interestType: 'general_contact', // Identificador para n8n
+            sourcePage: window.location.pathname,
+            submittedAt: new Date().toISOString()
+        });
 
         submitBtn.disabled = true;
         if (status) {
@@ -47,21 +47,8 @@ function initContactForm() {
             status.className = 'form-status';
         }
 
-        const API_ENDPOINT = NH_CONFIG.WEBHOOK_URL;
-
         try {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), NH_CONFIG.FETCH_TIMEOUT_MS);
-
-            const response = await fetch(API_ENDPOINT, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload),
-                signal: controller.signal
-            });
-            clearTimeout(timeoutId);
-
-            if (!response.ok) throw new Error('Network error');
+            await submitFormPayload(payload);
             if (!status) {
                 form.reset();
 

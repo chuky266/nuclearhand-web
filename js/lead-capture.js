@@ -1,4 +1,4 @@
-import { NH_CONFIG } from './config.js';
+import { createFormPayload, submitFormPayload } from './form-submit.js';
 
 export function initLeadCapture() {
   const form = document.getElementById('leadCaptureForm');
@@ -14,9 +14,6 @@ export function initLeadCapture() {
   form.appendChild(statusContainer);
 
   const hiddenTime = document.getElementById('submittedAtField');
-
-  // --- CONFIGURACIÓN DE ENDPOINT ---
-  const API_ENDPOINT = NH_CONFIG.WEBHOOK_URL;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -39,8 +36,7 @@ export function initLeadCapture() {
       return;
     }
 
-    const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
+    const payload = createFormPayload(form);
 
     // Captura segura del origen o producto para distinguir leads en n8n
     const urlParams = new URLSearchParams(window.location.search);
@@ -51,22 +47,8 @@ export function initLeadCapture() {
         payload.referrerPage = document.referrer;
     }
 
-    // Controller para timeout de prevención (15 segundos)
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), NH_CONFIG.FETCH_TIMEOUT_MS);
-
     try {
-      // 3. Envío Real
-      const response = await fetch(API_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload),
-        signal: controller.signal
-      });
-
-      if (!response.ok) throw new Error('Error en la transmisión');
+      await submitFormPayload(payload);
 
       // 4. UI: Éxito
       statusContainer.className = 'form-status-message success';
@@ -81,7 +63,6 @@ export function initLeadCapture() {
         statusContainer.innerHTML = '⚠️ ERROR DE TRANSMISIÓN. REINTENTE.';
       }
     } finally {
-      clearTimeout(timeoutId);
       btn.innerHTML = originalBtnText;
       btn.disabled = false;
 
