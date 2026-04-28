@@ -52,3 +52,52 @@ export async function submitFormPayload(payload) {
     clearTimeout(timeoutId);
   }
 }
+
+export function setSubmitButtonState(button, { disabled, html } = {}) {
+  if (!button) return;
+
+  if (typeof disabled === 'boolean') {
+    button.disabled = disabled;
+  }
+
+  if (html !== undefined) {
+    button.innerHTML = html;
+  }
+}
+
+export function updateStatusNode(statusNode, {
+  className,
+  text,
+  html,
+  color,
+  styleCssText,
+} = {}) {
+  if (!statusNode) return;
+
+  if (className !== undefined) {
+    statusNode.className = className;
+  }
+
+  if (styleCssText !== undefined) {
+    statusNode.style.cssText = styleCssText;
+  }
+
+  if (color !== undefined) {
+    statusNode.style.color = color;
+  }
+
+  if (html !== undefined) {
+    statusNode.innerHTML = html;
+    return;
+  }
+
+  if (text !== undefined) {
+    statusNode.textContent = text;
+  }
+}
+
+export function scheduleStatusUpdate(statusNode, update, delayMs = 6000) {
+  return setTimeout(() => {
+    updateStatusNode(statusNode, update);
+  }, delayMs);
+}

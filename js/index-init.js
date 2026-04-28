@@ -1,5 +1,12 @@
 import { fetchPrices, formatPrice } from './pricing.js';
-import { createFormPayload, FORM_SUBMIT_ERROR, submitFormPayload } from './form-submit.js';
+import {
+    createFormPayload,
+    FORM_SUBMIT_ERROR,
+    scheduleStatusUpdate,
+    setSubmitButtonState,
+    submitFormPayload,
+    updateStatusNode,
+} from './form-submit.js';
 
 // NH: GA4 Event Helpers
 function trackGAEvent(name, params) {
@@ -42,11 +49,11 @@ function initContactForm() {
             submittedAt: new Date().toISOString()
         });
 
-        submitBtn.disabled = true;
-        if (status) {
-            status.textContent = 'Transmitiendo...';
-            status.className = 'form-status';
-        }
+        setSubmitButtonState(submitBtn, { disabled: true });
+        updateStatusNode(status, {
+            className: 'form-status',
+            text: 'Transmitiendo...'
+        });
 
         try {
             await submitFormPayload(payload);
@@ -75,8 +82,8 @@ function initContactForm() {
                 : '⚠️ ERROR DE TRANSMISIÓN. REINTENTE.';
             status.style.color = '#ff3366';
         } finally {
-            submitBtn.disabled = false;
-            setTimeout(() => { if(status) status.textContent = ''; }, 6000);
+            setSubmitButtonState(submitBtn, { disabled: false });
+            scheduleStatusUpdate(status, { text: '' });
         }
     });
 }

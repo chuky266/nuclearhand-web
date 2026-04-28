@@ -1,4 +1,11 @@
-import { createFormPayload, FORM_SUBMIT_ERROR, submitFormPayload } from './form-submit.js';
+import {
+  createFormPayload,
+  FORM_SUBMIT_ERROR,
+  scheduleStatusUpdate,
+  setSubmitButtonState,
+  submitFormPayload,
+  updateStatusNode,
+} from './form-submit.js';
 
 export function initLeadCapture() {
   const form = document.getElementById('leadCaptureForm');
@@ -23,16 +30,20 @@ export function initLeadCapture() {
     if (hiddenTime) hiddenTime.value = new Date().toISOString();
 
     // 2. UI: Transmisión iniciada
-    btn.disabled = true;
-    btn.innerHTML = `<span class="spinner"></span> Transmitiendo...`;
-    if (statusContainer) {
-      statusContainer.className = 'form-status-message';
-      statusContainer.style.cssText = '';
-      statusContainer.innerHTML = '';
-    }
+    setSubmitButtonState(btn, {
+      disabled: true,
+      html: `<span class="spinner"></span> Transmitiendo...`,
+    });
+    updateStatusNode(statusContainer, {
+      className: 'form-status-message',
+      styleCssText: '',
+      html: '',
+    });
     if (!statusContainer) {
-      btn.disabled = false;
-      btn.innerHTML = originalBtnText;
+      setSubmitButtonState(btn, {
+        disabled: false,
+        html: originalBtnText,
+      });
       return;
     }
 
@@ -63,14 +74,15 @@ export function initLeadCapture() {
         statusContainer.innerHTML = '⚠️ ERROR DE TRANSMISIÓN. REINTENTE.';
       }
     } finally {
-      btn.innerHTML = originalBtnText;
-      btn.disabled = false;
-
-      setTimeout(() => {
-        statusContainer.className = 'form-status-message';
-        statusContainer.style.cssText = '';
-        statusContainer.innerHTML = '';
-      }, 6000);
+      setSubmitButtonState(btn, {
+        disabled: false,
+        html: originalBtnText,
+      });
+      scheduleStatusUpdate(statusContainer, {
+        className: 'form-status-message',
+        styleCssText: '',
+        html: '',
+      });
     }
   });
 
