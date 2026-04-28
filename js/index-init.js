@@ -1,5 +1,5 @@
 import { fetchPrices, formatPrice } from './pricing.js';
-import { createFormPayload, submitFormPayload } from './form-submit.js';
+import { createFormPayload, FORM_SUBMIT_ERROR, submitFormPayload } from './form-submit.js';
 
 // NH: GA4 Event Helpers
 function trackGAEvent(name, params) {
@@ -35,6 +35,7 @@ function initContactForm() {
         const status = document.getElementById('contact-form-status') || form.querySelector('.form-status');
         const submitBtn = form.querySelector('.form-submit');
         if (!submitBtn) return;
+
         const payload = createFormPayload(form, {
             interestType: 'general_contact', // Identificador para n8n
             sourcePage: window.location.pathname,
@@ -69,7 +70,9 @@ function initContactForm() {
             });
         } catch (err) {
             if (!status) return;
-            status.textContent = '⚠️ ERROR DE TRANSMISIÓN. REINTENTE.';
+            status.textContent = err.code === FORM_SUBMIT_ERROR.TIMEOUT
+                ? '⚠️ TIEMPO DE ESPERA EXCEDIDO. REINTENTE.'
+                : '⚠️ ERROR DE TRANSMISIÓN. REINTENTE.';
             status.style.color = '#ff3366';
         } finally {
             submitBtn.disabled = false;

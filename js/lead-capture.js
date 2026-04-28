@@ -1,4 +1,4 @@
-import { createFormPayload, submitFormPayload } from './form-submit.js';
+import { createFormPayload, FORM_SUBMIT_ERROR, submitFormPayload } from './form-submit.js';
 
 export function initLeadCapture() {
   const form = document.getElementById('leadCaptureForm');
@@ -41,10 +41,10 @@ export function initLeadCapture() {
     // Captura segura del origen o producto para distinguir leads en n8n
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('product')) {
-        payload.targetProduct = urlParams.get('product');
+      payload.targetProduct = urlParams.get('product');
     }
     if (document.referrer && !document.referrer.includes('investor-access')) {
-        payload.referrerPage = document.referrer;
+      payload.referrerPage = document.referrer;
     }
 
     try {
@@ -57,7 +57,7 @@ export function initLeadCapture() {
     } catch (error) {
       // 5. UI: Error
       statusContainer.className = 'form-status-message error';
-      if (error.name === 'AbortError') {
+      if (error.code === FORM_SUBMIT_ERROR.TIMEOUT) {
         statusContainer.innerHTML = '⚠️ TIEMPO DE ESPERA EXCEDIDO. REINTENTE.';
       } else {
         statusContainer.innerHTML = '⚠️ ERROR DE TRANSMISIÓN. REINTENTE.';
