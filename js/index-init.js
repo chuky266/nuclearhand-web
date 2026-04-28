@@ -1,4 +1,5 @@
 import { fetchPrices, formatPrice } from './pricing.js';
+import { NH_CONFIG } from './config.js';
 
 // NH: GA4 Event Helpers
 function trackGAEvent(name, params) {
@@ -46,11 +47,11 @@ function initContactForm() {
             status.className = 'form-status';
         }
 
-        const API_ENDPOINT = (window.NH_ENV && window.NH_ENV.WEBHOOK_URL) || 'https://nuclearhand.app.n8n.cloud/webhook/investor-intake';
+        const API_ENDPOINT = NH_CONFIG.WEBHOOK_URL;
 
         try {
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 12000);
+            const timeoutId = setTimeout(() => controller.abort(), NH_CONFIG.FETCH_TIMEOUT_MS);
 
             const response = await fetch(API_ENDPOINT, {
                 method: 'POST',

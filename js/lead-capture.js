@@ -1,3 +1,5 @@
+import { NH_CONFIG } from './config.js';
+
 export function initLeadCapture() {
   const form = document.getElementById('leadCaptureForm');
   if (!form) return;
@@ -14,9 +16,7 @@ export function initLeadCapture() {
   const hiddenTime = document.getElementById('submittedAtField');
 
   // --- CONFIGURACIÓN DE ENDPOINT ---
-  // Endpoint definitivo para recolección de Leads:
-  // Permitimos la inyección por variable de entorno/global, con fallback seguro
-  const API_ENDPOINT = (window.NH_ENV && window.NH_ENV.WEBHOOK_URL) || 'https://nuclearhand.app.n8n.cloud/webhook/investor-intake';
+  const API_ENDPOINT = NH_CONFIG.WEBHOOK_URL;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -53,7 +53,7 @@ export function initLeadCapture() {
 
     // Controller para timeout de prevención (15 segundos)
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 15000);
+    const timeoutId = setTimeout(() => controller.abort(), NH_CONFIG.FETCH_TIMEOUT_MS);
 
     try {
       // 3. Envío Real
