@@ -14,6 +14,7 @@ export default defineConfig({
                 band: 'nuclearband-x.html',
                 blog: 'blog.html',
                 blog1: 'blog-1.html',
+                napur: 'napur.html',
                 privacy: 'privacy.html',
                 terms: 'terms.html'
             }
