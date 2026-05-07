@@ -1,0 +1,281 @@
+/* Telecito Widget Styles */
+
+.telecito-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  font-family: var(--font-main, 'Inter', sans-serif);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none; /* Let clicks pass through widget container */
+}
+
+/* Button */
+.telecito-btn {
+  pointer-events: auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(10, 25, 47, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--primary, #00f2ff);
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.3), inset 0 0 10px rgba(0, 242, 255, 0.1);
+  color: var(--primary, #00f2ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 24px;
+}
+
+.telecito-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0, 242, 255, 0.5), inset 0 0 15px rgba(0, 242, 255, 0.2);
+  background: rgba(10, 25, 47, 0.95);
+}
+
+.telecito-btn svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.telecito-btn.open svg {
+  transform: rotate(90deg) scale(0);
+  opacity: 0;
+}
+
+.telecito-btn .close-icon {
+  position: absolute;
+  transform: rotate(-90deg) scale(0);
+  opacity: 0;
+}
+
+.telecito-btn.open .close-icon {
+  transform: rotate(0) scale(1);
+  opacity: 1;
+}
+
+/* Panel */
+.telecito-panel {
+  pointer-events: auto;
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: min(350px, calc(100vw - 48px));
+  background: rgba(10, 15, 30, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 242, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform-origin: bottom right;
+  transform: scale(0.8) translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-height: 500px;
+}
+
+.telecito-panel *,
+.telecito-form,
+.telecito-input,
+.telecito-submit {
+  pointer-events: auto;
+}
+
+.telecito-panel.open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Header */
+.telecito-header {
+  padding: 16px 20px;
+  background: linear-gradient(180deg, rgba(0, 242, 255, 0.1) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(0, 242, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.telecito-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary, #00f2ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #020617;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.telecito-title {
+  font-family: var(--font-tech, 'Orbitron', sans-serif);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  flex: 1;
+}
+
+.telecito-status {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff88;
+}
+
+/* Body */
+.telecito-body {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 242, 255, 0.3) transparent;
+}
+
+.telecito-body::-webkit-scrollbar {
+  width: 4px;
+}
+.telecito-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 242, 255, 0.3);
+  border-radius: 4px;
+}
+
+.telecito-message {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border-bottom-left-radius: 2px;
+  color: var(--text, #f8fafc);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  animation: telecitoFadeIn 0.3s ease forwards;
+}
+
+.telecito-message.user {
+  background: rgba(0, 242, 255, 0.1);
+  border-color: rgba(0, 242, 255, 0.2);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 2px;
+  align-self: flex-end;
+}
+
+@keyframes telecitoFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Quick Options */
+.telecito-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.telecito-option-btn {
+  background: transparent;
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  color: var(--primary, #00f2ff);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  font-family: var(--font-main, 'Inter', sans-serif);
+}
+
+.telecito-option-btn:hover {
+  background: rgba(0, 242, 255, 0.1);
+  border-color: var(--primary, #00f2ff);
+  transform: translateX(4px);
+}
+
+/* Form */
+.telecito-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  animation: telecitoFadeIn 0.3s ease forwards;
+}
+
+.telecito-input {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-family: var(--font-main, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+.telecito-input:focus {
+  outline: none;
+  border-color: var(--primary, #00f2ff);
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
+}
+
+.telecito-submit {
+  background: var(--primary, #00f2ff);
+  color: #020617;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: var(--font-tech, 'Orbitron', sans-serif);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  margin-top: 4px;
+}
+
+.telecito-submit:hover {
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+}
+
+.telecito-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.telecito-privacy-note {
+  font-size: 0.7rem;
+  color: var(--muted, #94a3b8);
+  text-align: center;
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  .telecito-widget {
+    bottom: 16px;
+    right: 16px;
+  }
+  .telecito-panel {
+    bottom: 70px;
+    width: calc(100vw - 32px);
+    max-height: 60vh;
+  }
+}

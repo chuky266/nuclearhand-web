@@ -1,4 +1,5 @@
 import { fetchPrices, formatPrice } from './pricing.js';
+import { NH_CONFIG } from './config.js';
 
 // NH: GA4 Event Helpers
 function trackGAEvent(name, params) {
@@ -34,8 +35,29 @@ async function initPricing() {
 // New helper for future backend integration
 window.sendContact = async function (payload) {
     console.log('[NH] Payload ready for backend:', payload);
-    // Future: fetch(WEBHOOK_URL, ...)
-    return new Promise((resolve) => setTimeout(resolve, 1500));
+    payload.interestType = 'general_contact';
+    payload.submittedAt = new Date().toISOString();
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), NH_CONFIG.FETCH_TIMEOUT_MS);
+
+    try {
+        const response = await fetch(NH_CONFIG.WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        
+        if (!response.ok) {
+            throw new Error(`Error en servidor n8n: ${response.status}`);
+        }
+        return response;
+    } catch (error) {
+        clearTimeout(timeoutId);
+        throw error;
+    }
 };
 
 // CONTACT FORM LOGIC
