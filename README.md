@@ -2,12 +2,12 @@
 
 Wearables de IA local radicalmente privada. Project "Nuclear Hand 5" - Ready-to-Share.
 
-## 🚀 Requisitos
+## Requisitos
 
 - Node.js (v18+)
 - npm
 
-## 🛠️ Instalación y Desarrollo
+## Instalación y Desarrollo
 
 1. **Instalar dependencias:**
    ```bash
@@ -20,7 +20,7 @@ Wearables de IA local radicalmente privada. Project "Nuclear Hand 5" - Ready-to-
    ```
    Acceso local: `http://127.0.0.1:5173`
 
-## 📦 Producción y Despliegue
+## Producción y Despliegue
 
 ### Build Local
 ```bash
@@ -35,7 +35,7 @@ npm run preview
 
 ---
 
-## ☁️ Despliegue en Vercel
+## Despliegue en Vercel
 
 ### Opción A: Importar Repositorio (Recomendado)
 1. Ve a [vercel.com](https://vercel.com).
@@ -53,7 +53,7 @@ npm run preview
 vercel deploy --prod
 ```
 
-## 🔐 Seguridad y Privacidad
+## Seguridad y Privacidad
 - El proyecto utiliza **IA Local**; no se envían datos sensibles a la nube.
 - No se han incluido archivos `.env` ni claves privadas en este repositorio.
 
