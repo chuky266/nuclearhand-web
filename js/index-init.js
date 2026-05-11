@@ -24,7 +24,7 @@ async function initPricing() {
         const sku = card.getAttribute('data-sku').trim().toUpperCase();
         const priceElement = card.querySelector('.product-price');
 
-        if (prices[sku]) {
+        if (Object.prototype.hasOwnProperty.call(prices, sku)) {
             priceElement.textContent = formatPrice(prices[sku]);
             console.log(`[Pricing] Updated ${sku}: ${prices[sku]}€`);
         } else {
