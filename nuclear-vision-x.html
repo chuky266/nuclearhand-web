@@ -152,9 +152,9 @@
   <!-- CALL TO ACTION ACTION PRICING -->
   <section id="solicitar" class="section">
     <div class="container">
-      <div class="card tech-border tl br scroll-reveal" style="text-align: center; padding: clamp(40px, 8vw, 80px); background: radial-gradient(circle at 50% 50%, rgba(0, 242, 255, 0.08) 0%, transparent 70%);">
+      <div class="card tech-border tl br scroll-reveal" data-sku="NH-VX-001" style="text-align: center; padding: clamp(40px, 8vw, 80px); background: radial-gradient(circle at 50% 50%, rgba(0, 242, 255, 0.08) 0%, transparent 70%);">
           <span class="badge">DISPONIBILIDAD LIMITADA</span>
-          <div style="font-size: 4em; color: var(--primary); font-family: var(--font-tech); margin: 20px 0; text-shadow: 0 0 40px var(--primary-glow);">399,00 €</div>
+          <div class="product-price" style="font-size: 4em; color: var(--primary); font-family: var(--font-tech); margin: 20px 0; text-shadow: 0 0 40px var(--primary-glow);">399,00 €</div>
           <p style="color: var(--text); font-size: 1.25em; max-width: 600px; margin: 0 auto 40px; line-height: 1.8;">
             Únete a la fase Alpha exclusiva. El lote inicial será asignado por invitación a perfiles verificados de nuestra comunidad.
           </p>
@@ -191,6 +191,29 @@
     </div>
   </footer>
 
+  <script type="module">
+    import { fetchPrices, formatPrice } from './js/pricing.js';
+
+    async function initProductPricing() {
+      const pricingCard = document.querySelector('[data-sku="NH-VX-001"]');
+      const priceElement = pricingCard?.querySelector('.product-price');
+
+      if (!pricingCard || !priceElement) {
+        return;
+      }
+
+      const prices = await fetchPrices();
+      const sku = pricingCard.getAttribute('data-sku').trim().toUpperCase();
+
+      if (Object.prototype.hasOwnProperty.call(prices, sku)) {
+        priceElement.textContent = formatPrice(prices[sku]);
+      } else {
+        console.warn(`[Pricing] SKU not found in CSV: ${sku}`);
+      }
+    }
+
+    initProductPricing();
+  </script>
   <script src="./js/scroll-animations.js" type="module"></script>
   <script src="/js/telecito.js" type="module"></script>
 </body>
