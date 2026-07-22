@@ -5,6 +5,10 @@ class Telecito {
     this.hasBeenClosed = sessionStorage.getItem('telecito_closed_session') === 'true';
     this.container = null;
     this.contactEmail = 'info@nuclearhand.com';
+    this.handleDocumentKeydown = (e) => {
+      if (e.key !== 'Escape' || !this.isOpen) return;
+      this.togglePanel({ manual: true, source: 'escape' });
+    };
     this.init();
   }
 
@@ -15,7 +19,7 @@ class Telecito {
     if (!this.hasBeenClosed) {
       setTimeout(() => {
         if (!this.isOpen && !this.hasBeenClosed) {
-          this.togglePanel();
+          this.togglePanel({ manual: false, source: 'auto' });
         }
       }, 800);
     }
@@ -26,10 +30,10 @@ class Telecito {
     this.container.className = 'telecito-widget';
 
     this.container.innerHTML = `
-      <div class="telecito-panel" id="telecitoPanel">
+      <div class="telecito-panel" id="telecitoPanel" role="region" aria-labelledby="telecitoTitle">
         <div class="telecito-header">
           <div class="telecito-avatar">T</div>
-          <div class="telecito-title">Telecito</div>
+          <div class="telecito-title" id="telecitoTitle">Telecito</div>
           <div class="telecito-status"></div>
         </div>
         <div class="telecito-body" id="telecitoBody">
@@ -45,7 +49,7 @@ class Telecito {
           <div class="telecito-content" id="telecitoContent"></div>
         </div>
       </div>
-      <button class="telecito-btn" id="telecitoBtn" aria-label="Abrir asistente">
+      <button class="telecito-btn" id="telecitoBtn" aria-label="Abrir asistente" aria-controls="telecitoPanel" aria-expanded="false">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
         <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
       </button>
@@ -56,7 +60,8 @@ class Telecito {
 
   bindEvents() {
     const btn = this.container.querySelector('#telecitoBtn');
-    btn.addEventListener('click', () => this.togglePanel());
+    btn.addEventListener('click', () => this.togglePanel({ manual: true, source: 'button' }));
+    document.addEventListener('keydown', this.handleDocumentKeydown);
 
     this.container.addEventListener('click', (e) => {
       const optionBtn = e.target.closest('.telecito-option-btn');
@@ -71,19 +76,31 @@ class Telecito {
     });
   }
 
-  togglePanel() {
+  updateButtonAccessibility(btn) {
+    btn.setAttribute('aria-expanded', this.isOpen ? 'true' : 'false');
+    btn.setAttribute('aria-label', this.isOpen ? 'Cerrar asistente' : 'Abrir asistente');
+  }
+
+  togglePanel({ manual = true } = {}) {
     this.isOpen = !this.isOpen;
     const panel = this.container.querySelector('#telecitoPanel');
     const btn = this.container.querySelector('#telecitoBtn');
+    const shouldRestoreFocus = manual && this.container.contains(document.activeElement);
 
     if (this.isOpen) {
       panel.classList.add('open');
       btn.classList.add('open');
+      this.updateButtonAccessibility(btn);
     } else {
       panel.classList.remove('open');
       btn.classList.remove('open');
+      this.updateButtonAccessibility(btn);
       sessionStorage.setItem('telecito_closed_session', 'true');
       this.hasBeenClosed = true;
+
+      if (shouldRestoreFocus) {
+        btn.focus();
+      }
     }
   }
 
