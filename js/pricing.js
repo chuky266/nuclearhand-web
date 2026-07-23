@@ -6,6 +6,10 @@
 export async function fetchPrices() {
   try {
     const response = await fetch('/prices.csv');
+    if (!response.ok) {
+      throw new Error(`Failed to fetch prices.csv: ${response.status}`);
+    }
+
     const csvText = await response.text();
     const lines = csvText.split('\n');
     const priceMap = {};
