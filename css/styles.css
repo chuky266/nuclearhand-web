@@ -5,6 +5,7 @@
   --bg-2: #0f172a;
   --card: rgba(15, 23, 42, 0.4); /* Smoother card background */
   --primary: #00f2ff;
+  --primary-glow: rgba(0, 242, 255, 0.45);
   --primary-2: #22d3ee;
   --accent: #f472b6; /* Softer pink/magenta */
   --text: #f8fafc;
