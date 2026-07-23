@@ -373,3 +373,16 @@
     max-height: 60vh;
   }
 }
+
+@media (orientation: landscape) and (max-height: 430px) {
+  .telecito-widget {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .telecito-panel {
+    bottom: 70px;
+    width: min(350px, calc(100vw - 32px));
+    max-height: calc(100vh - 86px);
+  }
+}
