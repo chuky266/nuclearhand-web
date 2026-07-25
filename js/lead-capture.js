@@ -7,6 +7,40 @@ import {
   updateStatusNode,
 } from './form-submit.js';
 
+const PRODUCT_OPTIONS = {
+  VisionX: {
+    code: 'VisionX',
+    label: 'Nuclear Vision X',
+  },
+  BandX: {
+    code: 'BandX',
+    label: 'NuclearBand X',
+  },
+  Ecosystem: {
+    code: 'Ecosystem',
+    label: 'Ecosistema Nuclear Hand',
+  },
+};
+
+const PRODUCT_OPTIONS_BY_LABEL = Object.fromEntries(
+  Object.values(PRODUCT_OPTIONS).map((product) => [product.label, product]),
+);
+
+function getSafeProductSelection(searchParams) {
+  const rawProduct = searchParams.get('product');
+  return PRODUCT_OPTIONS[rawProduct] || PRODUCT_OPTIONS.Ecosystem;
+}
+
+function syncProductField(productField, product) {
+  if (!productField) return;
+  productField.value = product.label;
+}
+
+function getSelectedProduct(productField) {
+  if (!productField) return PRODUCT_OPTIONS.Ecosystem;
+  return PRODUCT_OPTIONS_BY_LABEL[productField.value] || PRODUCT_OPTIONS.Ecosystem;
+}
+
 export function initLeadCapture() {
   const form = document.getElementById('leadCaptureForm');
   if (!form) return;
@@ -15,21 +49,23 @@ export function initLeadCapture() {
   if (!btn) return;
   const originalBtnText = btn.innerHTML;
 
-  // Contenedor de estado dinámico
   const statusContainer = document.createElement('div');
   statusContainer.className = 'form-status-message';
   form.appendChild(statusContainer);
 
   const hiddenTime = document.getElementById('submittedAtField');
+  const productField = document.getElementById('lead_product_interest');
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialProduct = getSafeProductSelection(urlParams);
+
+  syncProductField(productField, initialProduct);
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!btn) return;
 
-    // 1. Rellenar timestamp
     if (hiddenTime) hiddenTime.value = new Date().toISOString();
 
-    // 2. UI: Transmisión iniciada
     setSubmitButtonState(btn, {
       disabled: true,
       html: `<span class="spinner"></span> Transmitiendo...`,
@@ -47,13 +83,14 @@ export function initLeadCapture() {
       return;
     }
 
-    const payload = createFormPayload(form);
+    const selectedProduct = getSelectedProduct(productField);
+    syncProductField(productField, selectedProduct);
 
-    // Captura segura del origen o producto para distinguir leads en n8n
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('product')) {
-      payload.targetProduct = urlParams.get('product');
-    }
+    const payload = createFormPayload(form, {
+      targetProduct: selectedProduct.code,
+      targetProductLabel: selectedProduct.label,
+    });
+
     if (document.referrer && !document.referrer.includes('investor-access')) {
       payload.referrerPage = document.referrer;
     }
@@ -61,17 +98,16 @@ export function initLeadCapture() {
     try {
       await submitFormPayload(payload);
 
-      // 4. UI: Éxito
       statusContainer.className = 'form-status-message success';
-      statusContainer.innerHTML = '⚡ TRANSMISIÓN ENCRIPTADA COMPLETADA.';
+      statusContainer.innerHTML = 'âš¡ TRANSMISIÃ“N ENCRIPTADA COMPLETADA.';
       form.reset();
+      syncProductField(productField, initialProduct);
     } catch (error) {
-      // 5. UI: Error
       statusContainer.className = 'form-status-message error';
       if (error.code === FORM_SUBMIT_ERROR.TIMEOUT) {
-        statusContainer.innerHTML = '⚠️ TIEMPO DE ESPERA EXCEDIDO. REINTENTE.';
+        statusContainer.innerHTML = 'âš ï¸ TIEMPO DE ESPERA EXCEDIDO. REINTENTE.';
       } else {
-        statusContainer.innerHTML = '⚠️ ERROR DE TRANSMISIÓN. REINTENTE.';
+        statusContainer.innerHTML = 'âš ï¸ ERROR DE TRANSMISIÃ“N. REINTENTE.';
       }
     } finally {
       setSubmitButtonState(btn, {
@@ -86,20 +122,17 @@ export function initLeadCapture() {
     }
   });
 
-  // Listener para el botón superior "Solicitar credenciales alpha"
   const heroBtn = document.getElementById('btn-solicitar-alpha');
   if (heroBtn) {
     heroBtn.addEventListener('click', (e) => {
       e.preventDefault();
       const target = document.getElementById('alpha-request');
       if (target) {
-        // Hacemos scroll nativo más explícito y bloqueante
         document.documentElement.style.scrollBehavior = 'smooth';
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         const firstInput = document.getElementById('lead_name');
         if (firstInput) {
-          // Aseguramos el foco tras medio segundo para dar tiempo al scroll
           setTimeout(() => firstInput.focus(), 500);
         }
       }
