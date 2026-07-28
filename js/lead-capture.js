@@ -16,6 +16,10 @@ const PRODUCT_OPTIONS = {
     code: 'BandX',
     label: 'NuclearBand X',
   },
+  Ring: {
+    code: 'Ring',
+    label: 'Nuclear Ring',
+  },
   Ecosystem: {
     code: 'Ecosystem',
     label: 'Ecosistema Nuclear Hand',
