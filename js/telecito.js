@@ -1,6 +1,7 @@
 class Telecito {
   constructor() {
     if (document.querySelector('.telecito-widget')) return;
+    this.mobileBreakpoint = '(max-width: 480px)';
     this.isOpen = false;
     this.hasBeenClosed = sessionStorage.getItem('telecito_closed_session') === 'true';
     this.container = null;
@@ -16,7 +17,7 @@ class Telecito {
     this.createDOM();
     this.bindEvents();
 
-    if (!this.hasBeenClosed) {
+    if (!this.hasBeenClosed && !this.isMobileViewport()) {
       setTimeout(() => {
         if (!this.isOpen && !this.hasBeenClosed) {
           this.togglePanel({ manual: false, source: 'auto' });
@@ -74,6 +75,10 @@ class Telecito {
       if (!e.target.matches('.telecito-form')) return;
       this.handleFormSubmit(e, e.target);
     });
+  }
+
+  isMobileViewport() {
+    return window.matchMedia(this.mobileBreakpoint).matches;
   }
 
   updateButtonAccessibility(btn) {
