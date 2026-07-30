@@ -41,6 +41,25 @@
     }
 }
 
+@media (max-width: 768px) {
+    .bg-rays {
+        contain: paint;
+        clip-path: inset(0);
+        -webkit-clip-path: inset(0);
+        overflow: hidden;
+    }
+
+    .nh5-tech-footer-socials-mobile-wrap,
+    .nh5-vision-footer-socials-mobile-wrap {
+        flex-wrap: wrap;
+    }
+
+    .nh5-tech-mobile-overflow-guard,
+    .nh5-vision-mobile-overflow-guard {
+        overflow-x: clip;
+    }
+}
+
 .bg-particles {
     z-index: -1
 }
