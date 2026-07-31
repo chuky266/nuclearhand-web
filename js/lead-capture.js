@@ -63,6 +63,14 @@ export function initLeadCapture() {
   const initialProduct = getSafeProductSelection(urlParams);
 
   syncProductField(productField, initialProduct);
+  const productContextNote = document.getElementById('productContextNote');
+  if (productContextNote && productField && productField.selectedIndex >= 0) {
+    const selectedLabel = productField.options[productField.selectedIndex].text;
+    if (selectedLabel) {
+      productContextNote.textContent = `Solicitando información sobre: ${selectedLabel}`;
+      productContextNote.style.display = 'block';
+    }
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
