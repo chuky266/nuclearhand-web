@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nuclearhand.online/sitemap.xml
+Sitemap: https://nh5.nuclearhand.io/sitemap.xml
